@@ -2,6 +2,7 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import App from "../App";
+import Nav from "../components/Nav";
 
 // TESTS:
 // searchbar renders correctly
@@ -28,4 +29,13 @@ it("nav links path should be correct", async () => {
   expect(homeLink).toHaveAttribute("href", "/");
   expect(storeLink).toHaveAttribute("href", "/store");
   expect(contactAnchorLink).toHaveAttribute("href", "/#contact");
+});
+
+it("renders nav", () => {
+  const { container } = render(
+    <MemoryRouter>
+      <Nav />
+    </MemoryRouter>
+  );
+  expect(container).toMatchSnapshot();
 });
