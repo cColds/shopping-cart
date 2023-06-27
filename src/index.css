@@ -27,3 +27,7 @@ body {
 h1 {
   font-family: Poppins-Bold;
 }
+
+input {
+  outline: 0;
+}
