@@ -8,10 +8,11 @@ function App() {
       <header>
         <Nav />
       </header>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <main className="flex justify-center p-12">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </main>
     </div>
   );
 }
