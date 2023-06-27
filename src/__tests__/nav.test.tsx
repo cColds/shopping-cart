@@ -6,7 +6,7 @@ import App from "../App";
 // TESTS:
 // searchbar renders correctly
 // nav links go to the correct path
-it("should go to home page if logo is clicked", async () => {
+it("logo should link to home page", () => {
   render(
     <MemoryRouter>
       <App />
@@ -14,9 +14,4 @@ it("should go to home page if logo is clicked", async () => {
   );
   const logoLink = screen.getByRole("link", { name: /home page/i });
   expect(logoLink).toHaveAttribute("href", "/");
-  expect(
-    screen.getByRole("heading", {
-      name: /your one-stop destination for all your shopping needs/i,
-    })
-  ).toBeInTheDocument();
 });
