@@ -17,7 +17,7 @@ it("logo should link to home page", () => {
   expect(logoLink).toHaveAttribute("href", "/");
 });
 
-it("nav links path should be correct", async () => {
+it("nav links path should be correct", () => {
   render(
     <MemoryRouter>
       <App />
