@@ -4,13 +4,13 @@ import { FaSearch, FaShoppingCart } from "react-icons/fa";
 
 export default function Nav() {
   return (
-    <div className="flex justify-between px-6 py-2 gap-3 items-center	shadow-md">
+    <div className="flex items-center justify-between gap-3 px-6 py-2	shadow-md">
       <Link to="/" aria-label="home page" className="shrink-0">
-        <img src={logo} alt="fashonique logo" className="w-[200px] h-[30px]" />
+        <img src={logo} alt="fashonique logo" className="h-[30px] w-[200px]" />
       </Link>
       <form
         role="search"
-        className="flex items-center border-[1px] border-slate-200 rounded-lg h-[40px] w-[min-content]"
+        className="flex h-[40px] w-[min-content] items-center rounded-lg border-[1px] border-slate-200"
       >
         <button className="m-2">
           <FaSearch className="text-slate-500" />
@@ -19,7 +19,7 @@ export default function Nav() {
           type="search"
           id="search"
           placeholder="Search"
-          className="p-1 bg-transparent"
+          className="bg-transparent p-1"
           autoComplete="off"
         />
       </form>
