@@ -3,7 +3,7 @@
 exports[`renders nav 1`] = `
 <div>
   <div
-    class="flex justify-between px-6 py-2 gap-3 items-center	shadow-md"
+    class="flex items-center justify-between gap-3 px-6 py-2	shadow-md"
   >
     <a
       aria-label="home page"
@@ -12,12 +12,12 @@ exports[`renders nav 1`] = `
     >
       <img
         alt="fashonique logo"
-        class="w-[200px] h-[30px]"
+        class="h-[30px] w-[200px]"
         src="/src/assets/logo.svg"
       />
     </a>
     <form
-      class="flex items-center border-[1px] border-slate-200 rounded-lg h-[40px] w-[min-content]"
+      class="flex h-[40px] w-[min-content] items-center rounded-lg border-[1px] border-slate-200"
       role="search"
     >
       <button
@@ -40,7 +40,7 @@ exports[`renders nav 1`] = `
       </button>
       <input
         autocomplete="off"
-        class="p-1 bg-transparent"
+        class="bg-transparent p-1"
         id="search"
         placeholder="Search"
         type="search"
