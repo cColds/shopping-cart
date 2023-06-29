@@ -12,7 +12,7 @@ exports[`renders nav 1`] = `
     >
       <img
         alt="fashonique logo"
-        class="h-[30px] w-[200px]"
+        class="h-[30px] w-[180px]"
         src="/src/assets/logo.svg"
       />
     </a>
@@ -47,7 +47,7 @@ exports[`renders nav 1`] = `
       />
     </form>
     <ul
-      class="flex gap-3 text-lg"
+      class="flex gap-5"
     >
       <li>
         <a
