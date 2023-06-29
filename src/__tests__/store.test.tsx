@@ -3,9 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import Store from "../pages/Store";
 import mockData from "../mockData.json";
-
-// test that items show up when going to store
-
 it("should fetch mock.shop api", async () => {
   (fetch as any).mockResponseOnce(JSON.stringify(mockData));
 
@@ -18,7 +15,7 @@ it("should fetch mock.shop api", async () => {
   expect(await screen.findByText(/sweatpants/i)).toBeInTheDocument();
 });
 
-it.skip("should fail to fetch mock.shop api", async () => {
+it("should fail to fetch mock.shop api", async () => {
   (fetch as any).mockRejectOnce(new Error("Failed to fetch!"));
   render(
     <MemoryRouter>
