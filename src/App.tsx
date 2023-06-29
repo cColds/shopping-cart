@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Store from "./pages/Store";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main className="flex w-full flex-col items-center justify-between">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/store" element={<Store />} />
         </Routes>
       </main>
       <Footer />
