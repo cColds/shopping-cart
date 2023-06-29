@@ -8,7 +8,7 @@ function App() {
       <header>
         <Nav />
       </header>
-      <main className="flex justify-center p-12">
+      <main className="flex flex-col items-center justify-center">
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
