@@ -1,12 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
-interface Items {
-  node: {
-    title: string;
-    featuredImage: { url: string };
-    variants: { edges: [{ node: { price: { amount: string } } }] };
-  };
-}
+import Items from "../interfaces/Items";
 
 export default function FeaturedItems() {
   const [items, setItems] = useState<Items[]>([]);
