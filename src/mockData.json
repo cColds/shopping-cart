@@ -1,0 +1,54 @@
+{
+  "data": {
+    "products": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/Product/7982853619734",
+            "title": "Slides",
+            "description": "Simple, minimal and comfortable, these slides feature a classic design in the perfect shade of iron. Whether you're just lounging around the house or running errands, these slides will offer all-day comfort.",
+            "featuredImage": {
+              "id": "gid://shopify/ProductImage/39774608687126",
+              "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/slides.jpg?v=1675447358"
+            },
+            "variants": {
+              "edges": [
+                {
+                  "node": {
+                    "price": {
+                      "amount": "25.0",
+                      "currencyCode": "CAD"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "gid://shopify/Product/7982856273942",
+            "title": "Sweatpants",
+            "description": "Soft and comfortable sweatpants in stylish shades. They are perfect for lounging with their cozy stretch fabric that offers just the right amount of warmth. Enjoy the ultimate relaxation experience!",
+            "featuredImage": {
+              "id": "gid://shopify/ProductImage/39774602002454",
+              "url": "https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenSweatpants01.jpg?v=1675455387"
+            },
+            "variants": {
+              "edges": [
+                {
+                  "node": {
+                    "price": {
+                      "amount": "35.0",
+                      "currencyCode": "CAD"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
