@@ -1,32 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
 import Items from "../interfaces/Items";
+import fetchProducts from "../utils/fetchProducts";
 
 export default function FeaturedItems() {
   const [items, setItems] = useState<Items[]>([]);
 
   useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const res = await fetch(
-          "https://mock.shop/api?query={products(first:%204){edges%20{node%20{id%20title%20description%20featuredImage%20{id%20url}%20variants(first:%201){edges%20{node%20{price%20{amount%20currencyCode}}}}}}}}"
-        );
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-
-        const {
-          data: {
-            products: { edges },
-          },
-        } = await res.json();
-        setItems(edges);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    fetchProducts();
+    fetchProducts(4).then((items) => setItems(items));
   }, []);
   return (
     <section className="m-12 flex w-full flex-col items-center bg-slate-50 p-8 shadow-lg">
