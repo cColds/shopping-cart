@@ -6,7 +6,7 @@ export default function Nav() {
   return (
     <div className="flex items-center justify-between gap-3 px-6 py-2	shadow-md">
       <Link to="/" aria-label="home page" className="shrink-0">
-        <img src={logo} alt="fashonique logo" className="h-[30px] w-[200px]" />
+        <img src={logo} alt="fashonique logo" className="h-[30px] w-[180px]" />
       </Link>
       <form
         role="search"
@@ -23,7 +23,7 @@ export default function Nav() {
           autoComplete="off"
         />
       </form>
-      <ul className="flex gap-3 text-lg">
+      <ul className="flex gap-5">
         <li>
           <Link to="/">Home</Link>
         </li>
