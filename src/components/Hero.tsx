@@ -17,7 +17,6 @@ export default function Hero() {
       >
         Shop now
       </Link>
-      <p>Hey</p>
     </div>
   );
 }
