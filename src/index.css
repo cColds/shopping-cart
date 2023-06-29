@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply text-body-color;
+  }
+}
+
 @font-face {
   font-family: Poppins;
   src: url("./assets/fonts/Poppins-Regular.ttf");
@@ -24,7 +41,9 @@ body {
   min-height: 100vh;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-family: Poppins-Bold;
 }
 
