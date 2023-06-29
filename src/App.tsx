@@ -1,18 +1,20 @@
-import Nav from "./components/Nav";
-import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="app">
-      <header>
+    <div id="app" className="flex flex-col items-center justify-start">
+      <header className="w-full">
         <Nav />
       </header>
-      <main className="flex flex-col items-center justify-center">
+      <main className="flex w-full flex-col items-center justify-between">
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

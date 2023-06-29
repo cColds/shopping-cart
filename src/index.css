@@ -37,7 +37,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+html,
+body,
+#app {
   min-height: 100vh;
 }
 
