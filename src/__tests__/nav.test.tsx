@@ -1,7 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
-import App from "../App";
 import Nav from "../components/Nav";
 
 // TESTS:
@@ -10,7 +9,7 @@ import Nav from "../components/Nav";
 it("logo should link to home page", () => {
   render(
     <MemoryRouter>
-      <App />
+      <Nav />
     </MemoryRouter>
   );
   const logoLink = screen.getByRole("link", { name: /home page/i });
@@ -20,7 +19,7 @@ it("logo should link to home page", () => {
 it("nav links path should be correct", () => {
   render(
     <MemoryRouter>
-      <App />
+      <Nav />
     </MemoryRouter>
   );
   const homeLink = screen.getByRole("link", { name: /^home$/i });
