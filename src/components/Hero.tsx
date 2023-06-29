@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <div className="flex max-w-4xl flex-col items-center gap-5 py-12">
+    <section className="flex max-w-4xl flex-col items-center gap-5 py-12">
       <h1 className="text-center">
         Your one-stop destination for all your shopping needs
       </h1>
@@ -17,6 +17,6 @@ export default function Hero() {
       >
         Shop now
       </Link>
-    </div>
+    </section>
   );
 }
