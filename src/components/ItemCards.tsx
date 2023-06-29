@@ -24,7 +24,7 @@ export default function ItemCards({ items }: ItemCardsProps) {
                 className="rounded-tl-lg rounded-tr-lg"
                 draggable="false"
               />
-              <div className="flex h-24 flex-col gap-1 rounded-bl-lg rounded-br-lg bg-white p-2.5">
+              <div className="flex h-24 flex-col gap-1 rounded-bl-lg rounded-br-lg bg-white p-2.5 shadow-lg">
                 <h3 className="truncate">{title}</h3>
                 <p className="truncate">${price}</p>
               </div>
