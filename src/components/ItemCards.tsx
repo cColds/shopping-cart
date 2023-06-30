@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 import Items from "../interfaces/Items";
 
 interface ItemCardsProps {
@@ -15,8 +16,8 @@ export default function ItemCards({ items }: ItemCardsProps) {
             key={uuidv4()}
             className="flex cursor-pointer flex-col items-center"
           >
-            <a
-              href="/"
+            <Link
+              to={`/store/${title.toLowerCase()}`}
               className="w-[200px]"
               aria-label={`${title} for $${price}`}
             >
@@ -32,7 +33,7 @@ export default function ItemCards({ items }: ItemCardsProps) {
                 <h3 className="truncate">{title}</h3>
                 <p className="truncate">${price}</p>
               </div>
-            </a>
+            </Link>
           </li>
         );
       })}

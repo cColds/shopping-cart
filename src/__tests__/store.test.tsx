@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import Store from "../pages/Store";
 import mockData from "../mockData.json";
@@ -24,4 +24,21 @@ it("should fail to fetch mock.shop api", async () => {
   );
   expect(screen.queryByText(/slides/i)).not.toBeInTheDocument();
   expect(screen.queryByText(/sweatpants/i)).not.toBeInTheDocument();
+});
+
+it("items in the store should have the correct link", async () => {
+  (fetch as any).mockResponseOnce(JSON.stringify(mockData));
+  render(
+    <MemoryRouter>
+      <Store />
+    </MemoryRouter>
+  );
+  await waitFor(() => {
+    const slides = screen.getByRole("link", { name: /slides for \$25/i });
+    const sweatpants = screen.getByRole("link", {
+      name: /sweatpants for \$35/i,
+    });
+    expect(slides).toHaveAttribute("href", "/store/slides");
+    expect(sweatpants).toHaveAttribute("href", "/store/sweatpants");
+  });
 });
