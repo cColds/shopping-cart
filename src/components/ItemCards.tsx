@@ -2,11 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
 import Items from "../interfaces/Items";
 
-interface ItemCardsProps {
-  items: Items[];
-}
-
-export default function ItemCards({ items }: ItemCardsProps) {
+export default function ItemCards({ items }: { items: Items[] }) {
   return (
     <ul className="m-8 flex w-full flex-wrap justify-center gap-12 p-8">
       {items.map(({ node: { featuredImage, title, variants } }) => {
