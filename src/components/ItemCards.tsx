@@ -15,7 +15,11 @@ export default function ItemCards({ items }: ItemCardsProps) {
             key={uuidv4()}
             className="flex cursor-pointer flex-col items-center"
           >
-            <a href="/" className="w-[200px]">
+            <a
+              href="/"
+              className="w-[200px]"
+              aria-label={`${title} for $${price}`}
+            >
               <img
                 src={featuredImage.url}
                 alt={title}
