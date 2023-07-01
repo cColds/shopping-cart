@@ -3,11 +3,12 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import Home from "../pages/Home";
 import mockData from "../mockData.json";
+import Hero from "../components/Hero";
 
 it("shop now call to action should link to store", () => {
   render(
     <MemoryRouter>
-      <Home />
+      <Hero />
     </MemoryRouter>
   );
 
@@ -15,25 +16,14 @@ it("shop now call to action should link to store", () => {
   expect(shopNowLink).toHaveAttribute("href", "/store");
 });
 
-it("should fetch mock.shop api", async () => {
-  (fetch as any).mockResponseOnce(JSON.stringify(mockData));
+it("should render featured items", async () => {
+  const items = mockData.data.products.edges;
 
   render(
     <MemoryRouter>
-      <Home />
+      <Home items={items} />
     </MemoryRouter>
   );
   expect(await screen.findByText(/slides/i)).toBeInTheDocument();
   expect(await screen.findByText(/sweatpants/i)).toBeInTheDocument();
-});
-
-it("should fail to fetch mock.shop api", async () => {
-  (fetch as any).mockRejectOnce(new Error("Failed to fetch!"));
-  render(
-    <MemoryRouter>
-      <Home />
-    </MemoryRouter>
-  );
-  expect(screen.queryByText(/slides/i)).not.toBeInTheDocument();
-  expect(screen.queryByText(/sweatpants/i)).not.toBeInTheDocument();
 });
