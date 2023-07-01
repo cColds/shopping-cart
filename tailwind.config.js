@@ -7,6 +7,10 @@ export default {
         "primary-color": "#2B5842",
         "body-color": "#475569",
       },
+      fontFamily: {
+        "poppins-reg": ["Poppins", "system-ui"],
+        "poppins-bold": ["Poppins-Bold", "system-ui"],
+      },
     },
   },
   plugins: [],
