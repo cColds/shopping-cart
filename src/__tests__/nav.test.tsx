@@ -27,7 +27,7 @@ it("nav links path should be correct", () => {
   expect(contactAnchorLink).toHaveAttribute("href", "/#contact");
 });
 
-it("renders nav", () => {
+it("should render nav and match snapshot", () => {
   const { container } = render(
     <MemoryRouter>
       <Nav />

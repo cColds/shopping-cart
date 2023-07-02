@@ -5,7 +5,7 @@ import Home from "../pages/Home";
 import mockData from "../mockData.json";
 import Hero from "../components/Hero";
 
-it("shop now call to action should link to store", () => {
+it("shop now link should link to store", () => {
   render(
     <MemoryRouter>
       <Hero />
@@ -27,7 +27,7 @@ it("should render featured items", async () => {
   expect(await screen.findByText(/sweatpants/i)).toBeInTheDocument();
 });
 
-it("renders home component and matches snapshot", () => {
+it("should render home and match snapshot", () => {
   const items = mockData.data.products.edges;
 
   const { container } = render(

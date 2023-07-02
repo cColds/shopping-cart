@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import Store from "../pages/Store";
 import mockData from "../mockData.json";
-it("items should render", () => {
+it("should render featured items", () => {
   const items = mockData.data.products.edges;
 
   render(
