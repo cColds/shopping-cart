@@ -22,7 +22,6 @@ export default function ItemPage({ items }: { items: Item[] }) {
 
   return (
     <div className="flex flex-col flex-wrap gap-5 p-12">
-      {itemId}
       <div className="flex gap-5">
         <img
           src={currentItem.node.featuredImage.url}
