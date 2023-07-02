@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
 import Item from "../interfaces/Item";
 
-export default function ItemCards({
-  items,
-  handleItemClick,
-}: {
-  items: Item[];
-  handleItemClick: (item: Item) => void;
-}) {
+export default function ItemCards({ items }: { items: Item[] }) {
   return (
     <ul className="m-8 flex w-full flex-wrap justify-center gap-12 p-8">
       {items.map(({ node }) => {
@@ -22,7 +16,6 @@ export default function ItemCards({
               to={`/store/${title.toLowerCase()}`}
               className="w-[200px]"
               aria-label={`${title} for $${price}`}
-              onClick={() => handleItemClick({ node })}
             >
               <img
                 src={featuredImage.url}

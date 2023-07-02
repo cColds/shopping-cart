@@ -10,10 +10,7 @@ import Item from "./interfaces/Item";
 
 function App() {
   const [items, setItems] = useState<Item[] | []>([]);
-  const [currentItem, setCurrentItem] = useState<Item | null>(null);
   const [featuredItems, setFeaturedItems] = useState([]);
-
-  const handleItemClick = (item: Item) => setCurrentItem(item);
 
   useEffect(() => {
     (async () => {
@@ -30,20 +27,9 @@ function App() {
       </header>
       <main className="flex w-full flex-col items-center justify-between">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home items={featuredItems} handleItemClick={handleItemClick} />
-            }
-          />
-          <Route
-            path="/store"
-            element={<Store items={items} handleItemClick={handleItemClick} />}
-          />
-          <Route
-            path="/store/:id"
-            element={<ItemPage currentItem={currentItem} />}
-          />
+          <Route path="/" element={<Home items={featuredItems} />} />
+          <Route path="/store" element={<Store items={items} />} />
+          <Route path="/store/:itemId" element={<ItemPage items={items} />} />
         </Routes>
       </main>
       <Footer />

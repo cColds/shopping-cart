@@ -1,18 +1,28 @@
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import Item from "../interfaces/Item";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-export default function ItemPage({
-  currentItem,
-}: {
-  currentItem: Item | null;
-}) {
-  if (!currentItem) return null;
+export default function ItemPage({ items }: { items: Item[] }) {
+  const [currentItem, setCurrentItem] = useState<Item | null>(null);
+  const { itemId } = useParams();
+
+  useEffect(() => {
+    const targetItem =
+      items.find(
+        ({ node: { title } }) => title.toLowerCase() === itemId!.toLowerCase()
+      ) || null;
+    setCurrentItem(targetItem);
+  }, [items, itemId]);
+
+  if (currentItem == null) return null;
   const price = parseFloat(
     currentItem.node.variants.edges[0].node.price.amount
   );
 
   return (
     <div className="flex flex-col flex-wrap gap-5 p-12">
+      {itemId}
       <div className="flex gap-5">
         <img
           src={currentItem.node.featuredImage.url}
