@@ -5,9 +5,10 @@ import Store from "../pages/Store";
 import mockData from "../mockData.json";
 it("items should render", () => {
   const items = mockData.data.products.edges;
+  const handleItemClick = vi.fn();
   render(
     <MemoryRouter>
-      <Store items={items} />
+      <Store items={items} handleItemClick={handleItemClick} />
     </MemoryRouter>
   );
   expect(screen.getByText(/slides/i)).toBeInTheDocument();
@@ -16,10 +17,10 @@ it("items should render", () => {
 
 it("items in the store should have the correct link", () => {
   const items = mockData.data.products.edges;
-
+  const handleItemClick = vi.fn();
   render(
     <MemoryRouter>
-      <Store items={items} />
+      <Store items={items} handleItemClick={handleItemClick} />
     </MemoryRouter>
   );
 

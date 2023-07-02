@@ -1,21 +1,28 @@
-import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
-import Items from "../interfaces/Items";
+import Item from "../interfaces/Items";
 
-export default function ItemCards({ items }: { items: Items[] }) {
+export default function ItemCards({
+  items,
+  handleItemClick,
+}: {
+  items: Item[];
+  handleItemClick: (item: Item) => void;
+}) {
   return (
     <ul className="m-8 flex w-full flex-wrap justify-center gap-12 p-8">
-      {items.map(({ node: { featuredImage, title, variants } }) => {
+      {items.map(({ node }) => {
+        const { featuredImage, title, variants } = node;
         const price = +variants.edges[0].node.price.amount;
         return (
           <li
-            key={uuidv4()}
+            key={node.title}
             className="flex cursor-pointer flex-col items-center"
           >
             <Link
               to={`/store/${title.toLowerCase()}`}
               className="w-[200px]"
               aria-label={`${title} for $${price}`}
+              onClick={() => handleItemClick({ node })}
             >
               <img
                 src={featuredImage.url}

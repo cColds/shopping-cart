@@ -1,10 +1,16 @@
 import ItemCards from "../components/ItemCards";
-import Items from "../interfaces/Items";
+import Item from "../interfaces/Items";
 
-export default function Store({ items }: { items: Items[] }) {
+export default function Store({
+  items,
+  handleItemClick,
+}: {
+  items: Item[];
+  handleItemClick: (item: Item) => void;
+}) {
   return (
     <section className="flex w-full flex-col items-center p-8">
-      <ItemCards items={items} />
+      <ItemCards items={items} handleItemClick={handleItemClick} />
     </section>
   );
 }

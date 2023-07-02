@@ -18,10 +18,10 @@ it("shop now call to action should link to store", () => {
 
 it("should render featured items", async () => {
   const items = mockData.data.products.edges;
-
+  const handleItemClick = vi.fn();
   render(
     <MemoryRouter>
-      <Home items={items} />
+      <Home items={items} handleItemClick={handleItemClick} />
     </MemoryRouter>
   );
   expect(await screen.findByText(/slides/i)).toBeInTheDocument();
