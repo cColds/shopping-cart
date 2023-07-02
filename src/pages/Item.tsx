@@ -7,7 +7,9 @@ export default function ItemPage({
   currentItem: Item | null;
 }) {
   if (!currentItem) return null;
-  const price = currentItem.node.variants?.edges[0].node.price.amount;
+  const price = parseFloat(
+    currentItem.node.variants.edges[0].node.price.amount
+  );
 
   return (
     <div className="flex flex-col flex-wrap gap-5 p-12">
