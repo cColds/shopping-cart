@@ -24,15 +24,22 @@ export default function Nav() {
         />
       </form>
       <ul className="flex gap-5">
-        <li>
-          <Link to="/">Home</Link>
+        <li className="flex items-center">
+          <Link to="/" className="text-lg">
+            Home
+          </Link>
         </li>
-        <li>
-          <Link to="/store">Store</Link>
+        <li className="flex items-center">
+          <Link to="/store" className="text-lg">
+            Store
+          </Link>
         </li>
         <li className="flex">
-          <button>
+          <button className="relative">
             <FaShoppingCart className="text-xl" />
+            <span className="absolute right-[-10px] top-[-5px] flex h-[16px] min-w-[16px] items-center justify-center rounded-full bg-red-600 p-0.5 text-xs text-white">
+              1
+            </span>
           </button>
         </li>
       </ul>
