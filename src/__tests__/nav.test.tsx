@@ -3,9 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import Nav from "../components/Nav";
 
-// TESTS:
-// searchbar renders correctly
-// nav links go to the correct path
 it("logo should link to home page", () => {
   render(
     <MemoryRouter>
