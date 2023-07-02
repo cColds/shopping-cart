@@ -17,6 +17,11 @@
   p {
     @apply text-body-color;
   }
+
+  input:focus {
+    @apply ring-2;
+    border-radius: 5px;
+  }
 }
 
 @font-face {
