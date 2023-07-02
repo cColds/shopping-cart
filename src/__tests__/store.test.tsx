@@ -31,3 +31,14 @@ it("items in the store should have the correct link", () => {
   expect(slides).toHaveAttribute("href", "/store/slides");
   expect(sweatpants).toHaveAttribute("href", "/store/sweatpants");
 });
+
+it("should render store and match snapshot", () => {
+  const items = mockData.data.products.edges;
+
+  const { container } = render(
+    <MemoryRouter>
+      <Store items={items} />
+    </MemoryRouter>
+  );
+  expect(container).toMatchSnapshot();
+});

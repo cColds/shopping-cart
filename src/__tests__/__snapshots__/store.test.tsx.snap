@@ -1,0 +1,80 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render store and match snapshot 1`] = `
+<div>
+  <section
+    class="flex w-full flex-col items-center p-8"
+  >
+    <ul
+      class="m-8 flex w-full flex-wrap justify-center gap-12 p-8"
+    >
+      <li
+        class="flex cursor-pointer flex-col items-center"
+      >
+        <a
+          aria-label="Slides for $25"
+          class="w-[200px]"
+          href="/store/slides"
+        >
+          <img
+            alt="Slides"
+            class="rounded-tl-lg rounded-tr-lg"
+            draggable="false"
+            height="200px"
+            src="https://cdn.shopify.com/s/files/1/0688/1755/1382/products/slides.jpg?v=1675447358"
+            width="200px"
+          />
+          <div
+            class="flex h-24 flex-col gap-1 rounded-bl-lg rounded-br-lg bg-white p-2.5 shadow-lg"
+          >
+            <h3
+              class="truncate"
+            >
+              Slides
+            </h3>
+            <p
+              class="truncate"
+            >
+              $
+              25
+            </p>
+          </div>
+        </a>
+      </li>
+      <li
+        class="flex cursor-pointer flex-col items-center"
+      >
+        <a
+          aria-label="Sweatpants for $35"
+          class="w-[200px]"
+          href="/store/sweatpants"
+        >
+          <img
+            alt="Sweatpants"
+            class="rounded-tl-lg rounded-tr-lg"
+            draggable="false"
+            height="200px"
+            src="https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenSweatpants01.jpg?v=1675455387"
+            width="200px"
+          />
+          <div
+            class="flex h-24 flex-col gap-1 rounded-bl-lg rounded-br-lg bg-white p-2.5 shadow-lg"
+          >
+            <h3
+              class="truncate"
+            >
+              Sweatpants
+            </h3>
+            <p
+              class="truncate"
+            >
+              $
+              35
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
+</div>
+`;
