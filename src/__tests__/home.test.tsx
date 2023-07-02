@@ -26,3 +26,14 @@ it("should render featured items", async () => {
   expect(await screen.findByText(/slides/i)).toBeInTheDocument();
   expect(await screen.findByText(/sweatpants/i)).toBeInTheDocument();
 });
+
+it("renders home component and matches snapshot", () => {
+  const items = mockData.data.products.edges;
+
+  const { container } = render(
+    <MemoryRouter>
+      <Home items={items} />
+    </MemoryRouter>
+  );
+  expect(container).toMatchSnapshot();
+});
