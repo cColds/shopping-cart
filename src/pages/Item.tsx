@@ -23,8 +23,8 @@ export default function ItemPage({
 
         <div className="flex h-min w-[350px] flex-col gap-5 rounded-lg border-[1px] border-slate-200 p-2.5">
           <div>
-            <h2>{currentItem.node.title}</h2>
-            <h3 className="font-poppins-reg">${price}</h3>
+            <h1 className="text-xl">{currentItem.node.title}</h1>
+            <p className="font-poppins-reg text-lg">${price}</p>
           </div>
           <div className="flex gap-1.5">
             <button aria-label="decrease quantity">
@@ -46,7 +46,7 @@ export default function ItemPage({
       </div>
       <div className="min-w-full max-w-min  border-t-[1px] border-slate-200">
         <h3 className="my-1">Description</h3>
-        <p className="">{currentItem.node.description}</p>
+        <p>{currentItem.node.description}</p>
       </div>
     </div>
   );
