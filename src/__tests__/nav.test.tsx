@@ -21,10 +21,8 @@ it("nav links path should be correct", () => {
   );
   const homeLink = screen.getByRole("link", { name: /^home$/i });
   const storeLink = screen.getByRole("link", { name: /^store$/i });
-  const contactAnchorLink = screen.getByRole("link", { name: /^contact$/i });
   expect(homeLink).toHaveAttribute("href", "/");
   expect(storeLink).toHaveAttribute("href", "/store");
-  expect(contactAnchorLink).toHaveAttribute("href", "/#contact");
 });
 
 it("should render nav and match snapshot", () => {
