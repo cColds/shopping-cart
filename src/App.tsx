@@ -5,8 +5,8 @@ import Footer from "./components/Footer";
 import Store from "./pages/Store";
 import { useEffect, useState } from "react";
 import fetchProducts from "./utils/fetchProducts";
-import ItemPage from "./pages/Item";
-import Item from "./interfaces/Items";
+import ItemPage from "./pages/ItemPage";
+import Item from "./interfaces/Item";
 
 function App() {
   const [items, setItems] = useState<Item[] | []>([]);

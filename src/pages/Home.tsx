@@ -1,6 +1,6 @@
 import FeaturedItems from "../components/FeaturedItems";
 import Hero from "../components/Hero";
-import Item from "../interfaces/Items";
+import Item from "../interfaces/Item";
 
 export default function Home({
   items,

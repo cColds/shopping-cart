@@ -1,4 +1,4 @@
-import Item from "../interfaces/Items";
+import Item from "../interfaces/Item";
 import ItemCards from "./ItemCards";
 
 export default function FeaturedItems({

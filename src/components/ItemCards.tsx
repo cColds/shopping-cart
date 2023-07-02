@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Item from "../interfaces/Items";
+import Item from "../interfaces/Item";
 
 export default function ItemCards({
   items,

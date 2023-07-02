@@ -1,5 +1,5 @@
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
-import Item from "../interfaces/Items";
+import Item from "../interfaces/Item";
 
 export default function ItemPage({
   currentItem,

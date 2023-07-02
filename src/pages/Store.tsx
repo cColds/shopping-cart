@@ -1,5 +1,5 @@
 import ItemCards from "../components/ItemCards";
-import Item from "../interfaces/Items";
+import Item from "../interfaces/Item";
 
 export default function Store({
   items,
