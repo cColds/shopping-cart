@@ -156,7 +156,7 @@ it("should not decrement quantity by 1 if it's already 1", async () => {
   expect(quantity).toBe(1);
 });
 
-it.only("should set input quantity to 65", async () => {
+it("should set input quantity to 65", async () => {
   const user = userEvent.setup();
   const items = mockData.data.products.edges;
 
