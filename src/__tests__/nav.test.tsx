@@ -6,7 +6,7 @@ import Nav from "../components/Nav";
 it("logo should link to home page", () => {
   render(
     <MemoryRouter>
-      <Nav />
+      <Nav itemCount={0} />
     </MemoryRouter>
   );
   const logoLink = screen.getByRole("link", { name: /home page/i });
@@ -16,7 +16,7 @@ it("logo should link to home page", () => {
 it("nav links path should be correct", () => {
   render(
     <MemoryRouter>
-      <Nav />
+      <Nav itemCount={0} />
     </MemoryRouter>
   );
   const homeLink = screen.getByRole("link", { name: /^home$/i });
@@ -28,8 +28,18 @@ it("nav links path should be correct", () => {
 it("should render nav and match snapshot", () => {
   const { container } = render(
     <MemoryRouter>
-      <Nav />
+      <Nav itemCount={0} />
     </MemoryRouter>
   );
   expect(container).toMatchSnapshot();
+});
+
+it("should set cart item count to 3", () => {
+  render(
+    <MemoryRouter>
+      <Nav itemCount={3} />
+    </MemoryRouter>
+  );
+
+  expect(screen.getByText(3)).toBeInTheDocument();
 });
