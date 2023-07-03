@@ -67,6 +67,10 @@ function ItemPage({
             </button>
             <input
               onChange={(e) => {
+                if (+e.target.value > 1000) {
+                  e.target.value = "1000";
+                }
+
                 if (+e.target.value < 1) {
                   e.target.value = "1";
                 }
