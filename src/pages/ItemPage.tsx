@@ -3,14 +3,27 @@ import Item from "../interfaces/Item";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export default function ItemPage({ items }: { items: Item[] }) {
+function ItemPage({
+  items,
+  onAddToCartClick,
+  onDecrementClick,
+  onIncrementClick,
+  quantity,
+}: {
+  items: Item[];
+  onAddToCartClick: () => void;
+  onDecrementClick: () => void;
+  onIncrementClick: () => void;
+  quantity: number;
+}) {
   const [currentItem, setCurrentItem] = useState<Item | null>(null);
   const { itemId } = useParams();
+  console.log(itemId);
 
   useEffect(() => {
     const targetItem =
       items.find(
-        ({ node: { title } }) => title.toLowerCase() === itemId!.toLowerCase()
+        ({ node: { title } }) => title.toLowerCase() === itemId?.toLowerCase()
       ) || null;
     setCurrentItem(targetItem);
   }, [items, itemId]);
@@ -38,19 +51,33 @@ export default function ItemPage({ items }: { items: Item[] }) {
             <p className="font-poppins-reg text-lg">${price}</p>
           </div>
           <div className="flex gap-1.5">
-            <button aria-label="decrease quantity">
+            <button
+              onClick={(e) => {
+                if ((e.target as HTMLButtonElement).disabled) return;
+                onDecrementClick();
+              }}
+              aria-label="decrease quantity"
+              disabled={quantity === 1}
+            >
               <AiFillMinusCircle className="text-2xl" />
             </button>
             <input
               type="number"
-              value="1"
+              value={quantity}
               className="h-[30px] w-full rounded-lg border-[1px] border-slate-200 text-center"
             />
-            <button aria-label="increase quantity" className="text-2xl">
+            <button
+              onClick={onIncrementClick}
+              aria-label="increase quantity"
+              className="text-2xl"
+            >
               <AiFillPlusCircle />
             </button>
           </div>
-          <button className="w-full overflow-hidden truncate rounded-lg bg-primary-color p-2 text-center text-sm font-bold text-white">
+          <button
+            onClick={onAddToCartClick}
+            className="w-full overflow-hidden truncate rounded-lg bg-primary-color p-2 text-center text-sm font-bold text-white"
+          >
             Add to cart
           </button>
         </div>
@@ -62,3 +89,5 @@ export default function ItemPage({ items }: { items: Item[] }) {
     </div>
   );
 }
+
+export default ItemPage;
