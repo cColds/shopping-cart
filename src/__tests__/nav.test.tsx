@@ -43,3 +43,13 @@ it("should set cart item count to 3", () => {
 
   expect(screen.getByText(3)).toBeInTheDocument();
 });
+
+it("should limit max cart item count displayed to 99", () => {
+  render(
+    <MemoryRouter>
+      <Nav itemCount={150} />
+    </MemoryRouter>
+  );
+
+  expect(screen.getByText("99+")).toBeInTheDocument();
+});

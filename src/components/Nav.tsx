@@ -38,7 +38,7 @@ export default function Nav({ itemCount }: { itemCount: number }) {
           <button className="relative">
             <FaShoppingCart className="text-xl" />
             <span className="absolute right-[-10px] top-[-5px] flex h-[16px] min-w-[16px] items-center justify-center rounded-full bg-red-600 p-0.5 text-xs text-white">
-              {itemCount}
+              {itemCount < 100 ? itemCount : 99 + "+"}
             </span>
           </button>
         </li>
