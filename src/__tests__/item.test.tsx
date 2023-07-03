@@ -27,6 +27,8 @@ const mockHandleIncrement = vi.fn(() => {
   quantity += 1;
 });
 
+const mockHandleQuantity = vi.fn();
+
 it("should increment item count when clicking add to cart", async () => {
   const user = userEvent.setup();
   const items = mockData.data.products.edges;
@@ -43,6 +45,7 @@ it("should increment item count when clicking add to cart", async () => {
               onAddToCartClick={mockHandleAddToCart}
               onDecrementClick={mockHandleDecrement}
               onIncrementClick={mockHandleIncrement}
+              onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
             />
           }
@@ -75,6 +78,7 @@ it("should increment quantity by 1", async () => {
               onAddToCartClick={mockHandleAddToCart}
               onDecrementClick={mockHandleDecrement}
               onIncrementClick={mockHandleIncrement}
+              onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
             />
           }
@@ -105,6 +109,7 @@ it("should decrement quantity by 1", async () => {
               onAddToCartClick={mockHandleAddToCart}
               onDecrementClick={mockHandleDecrement}
               onIncrementClick={mockHandleIncrement}
+              onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
             />
           }
@@ -136,6 +141,7 @@ it("should not decrement quantity by 1 if it's already 1", async () => {
               onAddToCartClick={mockHandleAddToCart}
               onDecrementClick={mockHandleDecrement}
               onIncrementClick={mockHandleIncrement}
+              onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
             />
           }
@@ -148,4 +154,35 @@ it("should not decrement quantity by 1 if it's already 1", async () => {
 
   expect(mockHandleDecrement).toBeCalledTimes(0);
   expect(quantity).toBe(1);
+});
+
+it.only("should set input quantity to 65", async () => {
+  const user = userEvent.setup();
+  const items = mockData.data.products.edges;
+
+  render(
+    <MemoryRouter initialEntries={["/store/slides"]}>
+      <Nav itemCount={itemCount} />
+      <Routes>
+        <Route
+          path="/store/:itemId"
+          element={
+            <ItemPage
+              items={items}
+              onAddToCartClick={mockHandleAddToCart}
+              onDecrementClick={mockHandleDecrement}
+              onIncrementClick={mockHandleIncrement}
+              onQuantityInputChange={mockHandleQuantity}
+              quantity={quantity}
+            />
+          }
+        />
+      </Routes>
+    </MemoryRouter>
+  );
+  const quantityInput = screen.getByRole("spinbutton", {
+    name: /item quantity/i,
+  });
+  await user.type(quantityInput, "65");
+  expect(mockHandleQuantity).toHaveBeenCalledTimes(2);
 });

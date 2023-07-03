@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import fetchProducts from "./utils/fetchProducts";
 import ItemPage from "./pages/ItemPage";
 import Item from "./interfaces/Item";
+import { ChangeEvent } from "react";
 
 function App() {
   const [items, setItems] = useState<Item[] | []>([]);
@@ -24,6 +25,10 @@ function App() {
 
   const handleIncrementClick = () => {
     setQuantity(quantity + 1);
+  };
+
+  const handleQuantityInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuantity(+e.target.value);
   };
 
   useEffect(() => {
@@ -51,6 +56,7 @@ function App() {
                 onAddToCartClick={handleAddToCartClick}
                 onDecrementClick={handleDecrementClick}
                 onIncrementClick={handleIncrementClick}
+                onQuantityInputChange={handleQuantityInputChange}
                 quantity={quantity}
               />
             }
