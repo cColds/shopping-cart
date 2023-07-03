@@ -57,6 +57,7 @@ function ItemPage({
             <button
               onClick={(e) => {
                 if ((e.target as HTMLButtonElement).disabled) return;
+
                 onDecrementClick();
               }}
               aria-label="decrease quantity"
@@ -65,7 +66,13 @@ function ItemPage({
               <AiFillMinusCircle className="text-2xl" />
             </button>
             <input
-              onChange={onQuantityInputChange}
+              onChange={(e) => {
+                if (+e.target.value < 1) {
+                  e.target.value = "1";
+                }
+
+                onQuantityInputChange(e);
+              }}
               aria-label="item quantity"
               type="number"
               value={quantity}
