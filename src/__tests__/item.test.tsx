@@ -4,7 +4,6 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router";
 import ItemPage from "../pages/ItemPage";
 import mockData from "../mockData.json";
-import Nav from "../components/Nav";
 
 let itemCount: number;
 let quantity: number;
@@ -35,7 +34,6 @@ it("should increment item count when clicking add to cart", async () => {
 
   render(
     <MemoryRouter initialEntries={["/store/slides"]}>
-      <Nav itemCount={itemCount} />
       <Routes>
         <Route
           path="/store/:itemId"
@@ -68,7 +66,6 @@ it("should increment quantity by 1", async () => {
 
   render(
     <MemoryRouter initialEntries={["/store/slides"]}>
-      <Nav itemCount={itemCount} />
       <Routes>
         <Route
           path="/store/:itemId"
@@ -99,7 +96,6 @@ it("should decrement quantity by 1", async () => {
   quantity = 3;
   render(
     <MemoryRouter initialEntries={["/store/slides"]}>
-      <Nav itemCount={itemCount} />
       <Routes>
         <Route
           path="/store/:itemId"
@@ -131,7 +127,6 @@ it("should not decrement quantity by 1 if it's already 1", async () => {
 
   render(
     <MemoryRouter initialEntries={["/store/slides"]}>
-      <Nav itemCount={itemCount} />
       <Routes>
         <Route
           path="/store/:itemId"
@@ -162,7 +157,6 @@ it("should set input quantity to 65", async () => {
 
   render(
     <MemoryRouter initialEntries={["/store/slides"]}>
-      <Nav itemCount={itemCount} />
       <Routes>
         <Route
           path="/store/:itemId"
