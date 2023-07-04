@@ -3,10 +3,12 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import Nav from "../components/Nav";
 
+const mockHandleCartToggle = vi.fn();
+
 it("logo should link to home page", () => {
   render(
     <MemoryRouter>
-      <Nav itemCount={0} />
+      <Nav itemCount={0} onToggleCart={mockHandleCartToggle} />
     </MemoryRouter>
   );
   const logoLink = screen.getByRole("link", { name: /home page/i });
@@ -16,7 +18,7 @@ it("logo should link to home page", () => {
 it("nav links path should be correct", () => {
   render(
     <MemoryRouter>
-      <Nav itemCount={0} />
+      <Nav itemCount={0} onToggleCart={mockHandleCartToggle} />
     </MemoryRouter>
   );
   const homeLink = screen.getByRole("link", { name: /^home$/i });
@@ -28,7 +30,7 @@ it("nav links path should be correct", () => {
 it("should render nav and match snapshot", () => {
   const { container } = render(
     <MemoryRouter>
-      <Nav itemCount={0} />
+      <Nav itemCount={0} onToggleCart={mockHandleCartToggle} />
     </MemoryRouter>
   );
   expect(container).toMatchSnapshot();
@@ -37,7 +39,7 @@ it("should render nav and match snapshot", () => {
 it("should set cart item count to 3", () => {
   render(
     <MemoryRouter>
-      <Nav itemCount={3} />
+      <Nav itemCount={3} onToggleCart={mockHandleCartToggle} />
     </MemoryRouter>
   );
 
@@ -47,7 +49,7 @@ it("should set cart item count to 3", () => {
 it("should limit max cart item count displayed to 99", () => {
   render(
     <MemoryRouter>
-      <Nav itemCount={150} />
+      <Nav itemCount={150} onToggleCart={mockHandleCartToggle} />
     </MemoryRouter>
   );
 

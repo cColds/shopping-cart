@@ -2,7 +2,13 @@ import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 
-export default function Nav({ itemCount }: { itemCount: number }) {
+export default function Nav({
+  itemCount,
+  onToggleCart,
+}: {
+  itemCount: number;
+  onToggleCart: () => void;
+}) {
   return (
     <div className="flex items-center justify-between gap-3 px-6 py-2	shadow-md">
       <Link to="/" aria-label="home page" className="shrink-0">
@@ -35,7 +41,7 @@ export default function Nav({ itemCount }: { itemCount: number }) {
           </Link>
         </li>
         <li className="flex">
-          <button className="relative">
+          <button className="relative" onClick={onToggleCart}>
             <FaShoppingCart className="text-xl" />
             <span className="absolute right-[-10px] top-[-5px] flex h-[16px] min-w-[16px] items-center justify-center rounded-full bg-red-600 p-0.5 text-xs text-white">
               {itemCount < 100 ? itemCount : 99 + "+"}
