@@ -21,7 +21,6 @@ function ItemPage({
 }) {
   const [currentItem, setCurrentItem] = useState<Item | null>(null);
   const { itemId } = useParams();
-  console.log(itemId);
 
   useEffect(() => {
     const targetItem =

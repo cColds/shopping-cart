@@ -4,10 +4,10 @@ import { FaSearch, FaShoppingCart } from "react-icons/fa";
 
 export default function Nav({
   itemCount,
-  onToggleCart,
+  onCartToggle,
 }: {
   itemCount: number;
-  onToggleCart: () => void;
+  onCartToggle: () => void;
 }) {
   return (
     <div className="flex items-center justify-between gap-3 px-6 py-2	shadow-md">
@@ -41,7 +41,7 @@ export default function Nav({
           </Link>
         </li>
         <li className="flex">
-          <button className="relative" onClick={onToggleCart}>
+          <button className="relative" onClick={onCartToggle}>
             <FaShoppingCart className="text-xl" />
             <span className="absolute right-[-10px] top-[-5px] flex h-[16px] min-w-[16px] items-center justify-center rounded-full bg-red-600 p-0.5 text-xs text-white">
               {itemCount < 100 ? itemCount : 99 + "+"}
