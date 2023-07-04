@@ -30,6 +30,8 @@ const mockHandleQuantity = vi.fn();
 
 const mockResetQuantity = vi.fn();
 
+const mockSetCurrentItem = vi.fn();
+
 it("should increment item count when clicking add to cart", async () => {
   const user = userEvent.setup();
   const items = mockData.data.products.edges;
@@ -48,6 +50,8 @@ it("should increment item count when clicking add to cart", async () => {
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
               resetQuantity={mockResetQuantity}
+              currentItem={items[0]}
+              setCurrentItem={mockSetCurrentItem}
             />
           }
         />
@@ -81,6 +85,8 @@ it("should increment quantity by 1", async () => {
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
               resetQuantity={mockResetQuantity}
+              currentItem={items[0]}
+              setCurrentItem={mockSetCurrentItem}
             />
           }
         />
@@ -112,6 +118,8 @@ it("should decrement quantity by 1", async () => {
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
               resetQuantity={mockResetQuantity}
+              currentItem={items[0]}
+              setCurrentItem={mockSetCurrentItem}
             />
           }
         />
@@ -144,6 +152,8 @@ it("should not decrement quantity by 1 if it's already 1", async () => {
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
               resetQuantity={mockResetQuantity}
+              currentItem={items[0]}
+              setCurrentItem={mockSetCurrentItem}
             />
           }
         />
@@ -175,6 +185,8 @@ it("should set input quantity to 65", async () => {
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
               resetQuantity={mockResetQuantity}
+              currentItem={items[0]}
+              setCurrentItem={mockSetCurrentItem}
             />
           }
         />

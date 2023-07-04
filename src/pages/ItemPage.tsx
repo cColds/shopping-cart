@@ -1,6 +1,6 @@
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import Item from "../interfaces/Item";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ChangeEvent } from "react";
 
@@ -12,6 +12,8 @@ function ItemPage({
   onQuantityInputChange,
   quantity,
   resetQuantity,
+  currentItem,
+  setCurrentItem,
 }: {
   items: Item[];
   onAddToCartClick: () => void;
@@ -20,8 +22,9 @@ function ItemPage({
   onQuantityInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   quantity: number;
   resetQuantity: () => void;
+  currentItem: Item | null;
+  setCurrentItem: (updateItem: Item | null) => void;
 }) {
-  const [currentItem, setCurrentItem] = useState<Item | null>(null);
   const { itemId } = useParams();
 
   useEffect(() => {

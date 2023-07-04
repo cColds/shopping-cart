@@ -15,6 +15,7 @@ function App() {
   const [itemCount, setItemCount] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [currentItem, setCurrentItem] = useState<Item | null>(null);
 
   const handleCartToggle = () => {
     setIsCartOpen(!isCartOpen);
@@ -73,6 +74,8 @@ function App() {
                 onQuantityInputChange={handleQuantityInputChange}
                 quantity={quantity}
                 resetQuantity={resetQuantity}
+                currentItem={currentItem}
+                setCurrentItem={setCurrentItem}
               />
             }
           />
