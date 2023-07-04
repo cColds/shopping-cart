@@ -16,6 +16,7 @@ function App() {
   const [quantity, setQuantity] = useState(1);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [currentItem, setCurrentItem] = useState<Item | null>(null);
+  const [cartItems, setCartItems] = useState<Item[] | []>([]);
 
   const handleCartToggle = () => {
     setIsCartOpen(!isCartOpen);
@@ -23,19 +24,41 @@ function App() {
 
   const handleAddToCartClick = () => {
     if (currentItem == null) return;
-
     setItemCount(itemCount + quantity);
-    const currentQuantity = currentItem.node.quantity;
+
+    // If cartItem exists alreadys, use its quantity instead of relying on currentItem,
+    // which resets to null after leaving page and can set quantity incorrectly
+    const cartItem = cartItems.find(
+      (item) => item.node.title === currentItem.node.title
+    );
+
+    const currentQuantity = cartItem?.node.quantity;
     const newQuantity =
       currentQuantity == null ? quantity : currentQuantity + quantity;
 
-    setCurrentItem({
+    const updatedItem = {
       ...currentItem,
       node: {
         ...currentItem.node,
         quantity: newQuantity,
       },
+    };
+
+    setCurrentItem(updatedItem);
+
+    if (currentQuantity == null) {
+      setCartItems([...cartItems, updatedItem]);
+      return;
+    }
+    const replaceOldItem = cartItems.map((item) => {
+      if (item.node.title === currentItem.node.title) {
+        return updatedItem;
+      }
+
+      return item;
     });
+
+    setCartItems(replaceOldItem);
   };
 
   const handleDecrementClick = () => {
