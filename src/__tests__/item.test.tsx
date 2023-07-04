@@ -28,6 +28,8 @@ const mockHandleIncrement = vi.fn(() => {
 
 const mockHandleQuantity = vi.fn();
 
+const mockResetQuantity = vi.fn();
+
 it("should increment item count when clicking add to cart", async () => {
   const user = userEvent.setup();
   const items = mockData.data.products.edges;
@@ -45,6 +47,7 @@ it("should increment item count when clicking add to cart", async () => {
               onIncrementClick={mockHandleIncrement}
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
+              resetQuantity={mockResetQuantity}
             />
           }
         />
@@ -77,6 +80,7 @@ it("should increment quantity by 1", async () => {
               onIncrementClick={mockHandleIncrement}
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
+              resetQuantity={mockResetQuantity}
             />
           }
         />
@@ -107,6 +111,7 @@ it("should decrement quantity by 1", async () => {
               onIncrementClick={mockHandleIncrement}
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
+              resetQuantity={mockResetQuantity}
             />
           }
         />
@@ -138,6 +143,7 @@ it("should not decrement quantity by 1 if it's already 1", async () => {
               onIncrementClick={mockHandleIncrement}
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
+              resetQuantity={mockResetQuantity}
             />
           }
         />
@@ -168,6 +174,7 @@ it("should set input quantity to 65", async () => {
               onIncrementClick={mockHandleIncrement}
               onQuantityInputChange={mockHandleQuantity}
               quantity={quantity}
+              resetQuantity={mockResetQuantity}
             />
           }
         />

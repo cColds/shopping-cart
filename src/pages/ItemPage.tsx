@@ -11,6 +11,7 @@ function ItemPage({
   onIncrementClick,
   onQuantityInputChange,
   quantity,
+  resetQuantity,
 }: {
   items: Item[];
   onAddToCartClick: () => void;
@@ -18,9 +19,14 @@ function ItemPage({
   onIncrementClick: () => void;
   onQuantityInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   quantity: number;
+  resetQuantity: () => void;
 }) {
   const [currentItem, setCurrentItem] = useState<Item | null>(null);
   const { itemId } = useParams();
+
+  useEffect(() => {
+    resetQuantity();
+  }, [itemId]);
 
   useEffect(() => {
     const targetItem =

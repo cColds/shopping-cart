@@ -36,6 +36,10 @@ function App() {
     setQuantity(+e.target.value);
   };
 
+  const resetQuantity = () => {
+    setQuantity(1);
+  };
+
   useEffect(() => {
     (async () => {
       const fetchedItems = await fetchProducts(10);
@@ -68,6 +72,7 @@ function App() {
                 onIncrementClick={handleIncrementClick}
                 onQuantityInputChange={handleQuantityInputChange}
                 quantity={quantity}
+                resetQuantity={resetQuantity}
               />
             }
           />
