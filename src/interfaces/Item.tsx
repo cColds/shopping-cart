@@ -8,5 +8,6 @@ export default interface Item {
     description: string;
     featuredImage: { url: string };
     variants: { edges: Edge[] };
+    quantity?: number;
   };
 }

@@ -22,7 +22,20 @@ function App() {
   };
 
   const handleAddToCartClick = () => {
+    if (currentItem == null) return;
+
     setItemCount(itemCount + quantity);
+    const currentQuantity = currentItem.node.quantity;
+    const newQuantity =
+      currentQuantity == null ? quantity : currentQuantity + quantity;
+
+    setCurrentItem({
+      ...currentItem,
+      node: {
+        ...currentItem.node,
+        quantity: newQuantity,
+      },
+    });
   };
 
   const handleDecrementClick = () => {
