@@ -9,5 +9,6 @@ export default interface Item {
     featuredImage: { url: string };
     variants: { edges: Edge[] };
     quantity?: number;
+    id?: string;
   };
 }

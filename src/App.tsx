@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState, ChangeEvent } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import ItemPage from "./pages/ItemPage";
@@ -47,6 +48,7 @@ function App() {
     setCurrentItem(updatedItem);
 
     if (currentQuantity == null) {
+      updatedItem.node.id = uuidv4();
       setCartItems([...cartItems, updatedItem]);
       return;
     }
@@ -95,6 +97,7 @@ function App() {
           isCartOpen={isCartOpen}
           onCartToggle={handleCartToggle}
           itemCount={itemCount}
+          cartItems={cartItems}
         />
         <Routes>
           <Route path="/" element={<Home items={featuredItems} />} />
