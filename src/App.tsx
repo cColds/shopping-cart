@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useEffect, useState, ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
@@ -19,13 +19,20 @@ function App() {
   const [currentItem, setCurrentItem] = useState<Item | null>(null);
   const [cartItems, setCartItems] = useState<Item[] | []>([]);
 
+  const updateItemCount = (items: Item[]) => {
+    const updatedItemCount = items.reduce((acc, curr) => {
+      return acc + (curr.node.quantity ?? 0);
+    }, 0);
+
+    setItemCount(updatedItemCount);
+  };
+
   const handleCartToggle = () => {
     setIsCartOpen(!isCartOpen);
   };
 
   const handleAddToCartClick = () => {
     if (currentItem == null) return;
-    setItemCount(itemCount + quantity);
 
     // If cartItem exists alreadys, use its quantity instead of relying on currentItem,
     // which resets to null after leaving page and can set quantity incorrectly
@@ -36,6 +43,7 @@ function App() {
     const currentQuantity = cartItem?.node.quantity;
     const newQuantity =
       currentQuantity == null ? quantity : currentQuantity + quantity;
+    if (newQuantity > 1000) return;
 
     const updatedItem = {
       ...currentItem,
@@ -46,6 +54,7 @@ function App() {
     };
 
     setCurrentItem(updatedItem);
+    setItemCount(itemCount + quantity);
 
     if (currentQuantity == null) {
       updatedItem.node.id = uuidv4();
@@ -71,9 +80,7 @@ function App() {
     setQuantity(quantity + 1);
   };
 
-  const handleQuantityInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setQuantity(+e.target.value);
-  };
+  const handleQuantityInputChange = (quantity: number) => setQuantity(quantity);
 
   const resetQuantity = () => {
     setQuantity(1);
@@ -98,6 +105,8 @@ function App() {
           onCartToggle={handleCartToggle}
           itemCount={itemCount}
           cartItems={cartItems}
+          setCartItems={setCartItems}
+          updateItemCount={updateItemCount}
         />
         <Routes>
           <Route path="/" element={<Home items={featuredItems} />} />
