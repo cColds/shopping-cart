@@ -19,6 +19,14 @@ function App() {
   const [currentItem, setCurrentItem] = useState<Item | null>(null);
   const [cartItems, setCartItems] = useState<Item[] | []>([]);
 
+  const handleItemDeleteClick = (targetItem: Item) => {
+    const updatedItems = cartItems.filter(
+      (item) => item.node.title !== targetItem.node.title
+    );
+    setCartItems(updatedItems);
+    updateItemCount(updatedItems);
+  };
+
   const updateItemCount = (items: Item[]) => {
     const updatedItemCount = items.reduce((acc, curr) => {
       return acc + (curr.node.quantity ?? 0);
@@ -107,6 +115,7 @@ function App() {
           cartItems={cartItems}
           setCartItems={setCartItems}
           updateItemCount={updateItemCount}
+          onItemDeleteClick={handleItemDeleteClick}
         />
         <Routes>
           <Route path="/" element={<Home items={featuredItems} />} />

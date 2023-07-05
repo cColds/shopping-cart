@@ -1,4 +1,4 @@
-import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
+import { FaCirclePlus, FaCircleMinus, FaTrash } from "react-icons/fa6";
 
 import Item from "../interfaces/Item";
 
@@ -9,6 +9,7 @@ function Cart({
   cartItems,
   setCartItems,
   updateItemCount,
+  onItemDeleteClick,
 }: {
   isCartOpen: boolean;
   onCartToggle: () => void;
@@ -16,6 +17,7 @@ function Cart({
   cartItems: Item[];
   setCartItems: (item: Item[]) => void;
   updateItemCount: (items: Item[]) => void;
+  onItemDeleteClick: (items: Item) => void;
 }) {
   const handleItemCartQuantityChange = (quantity: number, targetItem: Item) => {
     let newQuantity = quantity;
@@ -92,7 +94,7 @@ function Cart({
 
                   return (
                     <li
-                      className="flex gap-2 rounded-lg bg-card-gray shadow-lg"
+                      className="flex rounded-lg bg-card-gray shadow-lg"
                       key={item.node.id}
                     >
                       <div>
@@ -103,7 +105,7 @@ function Cart({
                           draggable="false"
                         />
                       </div>
-                      <div className="flex flex-col justify-between p-1">
+                      <div className="flex flex-col justify-between p-2.5">
                         <div>
                           <h2 className="text-base">{item.node.title}</h2>
                           <p className="text-sm text-dark">
@@ -149,6 +151,15 @@ function Cart({
                             <FaCirclePlus />
                           </button>
                         </div>
+                      </div>
+                      <div className="flex w-full items-start justify-end p-2.5">
+                        <button
+                          className="text-xl"
+                          aria-label="delete item"
+                          onClick={() => onItemDeleteClick(item)}
+                        >
+                          <FaTrash className="text-red-600" />
+                        </button>
                       </div>
                     </li>
                   );
