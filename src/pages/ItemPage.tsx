@@ -18,7 +18,7 @@ function ItemPage({
   onAddToCartClick: () => void;
   onDecrementClick: () => void;
   onIncrementClick: () => void;
-  onQuantityInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onQuantityInputChange: (quantity: number) => void;
   quantity: number;
   resetQuantity: () => void;
   currentItem: Item | null;
@@ -74,15 +74,11 @@ function ItemPage({
             </button>
             <input
               onChange={(e) => {
-                if (+e.target.value > 1000) {
-                  e.target.value = "1000";
-                }
+                let quantity = e.target.valueAsNumber;
+                if (quantity > 1000) quantity = 1000;
+                else if (quantity < 1) quantity = 1;
 
-                if (+e.target.value < 1) {
-                  e.target.value = "1";
-                }
-
-                onQuantityInputChange(e);
+                onQuantityInputChange(quantity);
               }}
               aria-label="item quantity"
               type="number"
@@ -93,6 +89,7 @@ function ItemPage({
               onClick={onIncrementClick}
               aria-label="increase quantity"
               className="text-2xl"
+              disabled={quantity >= 1000}
             >
               <AiFillPlusCircle />
             </button>
