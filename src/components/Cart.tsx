@@ -19,6 +19,14 @@ function Cart({
   updateItemCount: (items: Item[]) => void;
   onItemDeleteClick: (items: Item) => void;
 }) {
+  const getTotalCost = () => {
+    return cartItems.reduce((acc, curr) => {
+      const price = +curr.node.variants.edges[0].node.price.amount;
+
+      return acc + (curr.node.quantity ?? 0) * price;
+    }, 0);
+  };
+
   const handleItemCartQuantityChange = (quantity: number, targetItem: Item) => {
     let newQuantity = quantity;
     if (quantity > 1000) newQuantity = 1000;
@@ -176,7 +184,8 @@ function Cart({
           </div>
           <div className="flex flex-col gap-3.5">
             <p className="text-lg">
-              Total: <span className="font-poppins-bold">$24</span>
+              Total:{" "}
+              <span className="font-poppins-bold">${getTotalCost()}</span>
             </p>
             <button className="rounded-lg bg-primary-color p-2 text-center font-poppins-bold text-sm text-white">
               Checkout
