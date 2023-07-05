@@ -13,7 +13,7 @@ export default function ItemCards({ items }: { items: Item[] }) {
             className="flex cursor-pointer flex-col items-center"
           >
             <Link
-              to={`/store/${title.toLowerCase()}`}
+              to={`/store/${title.replace(/\s+/g, "-").toLowerCase()}`}
               className="w-[200px]"
               aria-label={`${title} for $${price}`}
             >
