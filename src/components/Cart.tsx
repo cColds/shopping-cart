@@ -182,15 +182,17 @@ function Cart({
               </button>
             )}
           </div>
-          <div className="flex flex-col gap-3.5">
-            <p className="text-lg">
-              Total:{" "}
-              <span className="font-poppins-bold">${getTotalCost()}</span>
-            </p>
-            <button className="rounded-lg bg-primary-color p-2 text-center font-poppins-bold text-sm text-white">
-              Checkout
-            </button>
-          </div>
+          {itemCount ? (
+            <div className="flex flex-col gap-3.5">
+              <p className="text-lg">
+                Total:{" "}
+                <span className="font-poppins-bold">${getTotalCost()}</span>
+              </p>
+              <button className="rounded-lg bg-primary-color p-2 text-center font-poppins-bold text-sm text-white">
+                Checkout
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
