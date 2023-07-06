@@ -2,13 +2,19 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 import Nav from "../components/Nav";
+import mockData from "../mockData.json";
 
 const mockHandleCartToggle = vi.fn();
+const mockItems = mockData.data.products.edges;
 
 it("logo should link to home page", () => {
   render(
     <MemoryRouter>
-      <Nav itemCount={0} onCartToggle={mockHandleCartToggle} />
+      <Nav
+        items={mockItems}
+        itemCount={0}
+        onCartToggle={mockHandleCartToggle}
+      />
     </MemoryRouter>
   );
   const logoLink = screen.getByRole("link", { name: /home page/i });
@@ -18,7 +24,11 @@ it("logo should link to home page", () => {
 it("nav links path should be correct", () => {
   render(
     <MemoryRouter>
-      <Nav itemCount={0} onCartToggle={mockHandleCartToggle} />
+      <Nav
+        items={mockItems}
+        itemCount={0}
+        onCartToggle={mockHandleCartToggle}
+      />
     </MemoryRouter>
   );
   const homeLink = screen.getByRole("link", { name: /^home$/i });
@@ -30,7 +40,11 @@ it("nav links path should be correct", () => {
 it("should render nav and match snapshot", () => {
   const { container } = render(
     <MemoryRouter>
-      <Nav itemCount={0} onCartToggle={mockHandleCartToggle} />
+      <Nav
+        items={mockItems}
+        itemCount={0}
+        onCartToggle={mockHandleCartToggle}
+      />
     </MemoryRouter>
   );
   expect(container).toMatchSnapshot();
@@ -39,7 +53,11 @@ it("should render nav and match snapshot", () => {
 it("should set cart item count to 3", () => {
   render(
     <MemoryRouter>
-      <Nav itemCount={3} onCartToggle={mockHandleCartToggle} />
+      <Nav
+        items={mockItems}
+        itemCount={3}
+        onCartToggle={mockHandleCartToggle}
+      />
     </MemoryRouter>
   );
 
@@ -49,7 +67,11 @@ it("should set cart item count to 3", () => {
 it("should limit max cart item count displayed to 99", () => {
   render(
     <MemoryRouter>
-      <Nav itemCount={150} onCartToggle={mockHandleCartToggle} />
+      <Nav
+        items={mockItems}
+        itemCount={150}
+        onCartToggle={mockHandleCartToggle}
+      />
     </MemoryRouter>
   );
 

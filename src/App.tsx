@@ -105,7 +105,11 @@ function App() {
   return (
     <div id="app" className="flex flex-col items-center justify-start">
       <header className="w-full">
-        <Nav onCartToggle={handleCartToggle} itemCount={itemCount} />
+        <Nav
+          onCartToggle={handleCartToggle}
+          itemCount={itemCount}
+          items={items}
+        />
       </header>
       <main className="flex w-full flex-col items-center justify-between">
         <Cart
