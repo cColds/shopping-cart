@@ -79,7 +79,7 @@ function Cart({
   return isCartOpen ? (
     <div
       onClick={onCartToggle}
-      className="fixed right-0 top-0 flex h-full w-full justify-end bg-modal"
+      className="fixed right-0 top-0 z-50 flex h-full w-full justify-end bg-modal backdrop-blur-sm"
     >
       <div
         onClick={(e) => {
