@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
+import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
 import Item from "../interfaces/Item";
 
 function ItemPage({
@@ -72,7 +72,7 @@ function ItemPage({
               aria-label="decrease quantity"
               disabled={quantity === 1}
             >
-              <AiFillMinusCircle className="text-2xl" />
+              <FaCircleMinus className="text-2xl" />
             </button>
             <input
               onChange={(e) => {
@@ -93,7 +93,7 @@ function ItemPage({
               className="text-2xl"
               disabled={quantity >= 1000}
             >
-              <AiFillPlusCircle />
+              <FaCirclePlus />
             </button>
           </div>
           <button
