@@ -199,3 +199,24 @@ it("should set input quantity to 65", async () => {
   await user.type(quantityInput, "65");
   expect(mockHandleQuantity).toHaveBeenCalledTimes(2);
 });
+
+it("should render item page and match snapshot", () => {
+  const items = mockData.data.products.edges;
+
+  const { container } = render(
+    <MemoryRouter>
+      <ItemPage
+        items={items}
+        onAddToCartClick={mockHandleAddToCart}
+        onDecrementClick={mockHandleDecrement}
+        onIncrementClick={mockHandleIncrement}
+        onQuantityInputChange={mockHandleQuantity}
+        quantity={quantity}
+        resetQuantity={mockResetQuantity}
+        currentItem={items[0]}
+        setCurrentItem={mockSetCurrentItem}
+      />
+    </MemoryRouter>
+  );
+  expect(container).toMatchSnapshot();
+});

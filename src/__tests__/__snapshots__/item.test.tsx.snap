@@ -1,0 +1,103 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render item page and match snapshot 1`] = `
+<div>
+  <div
+    class="flex flex-col flex-wrap gap-5 p-12"
+  >
+    <div
+      class="flex gap-5"
+    >
+      <img
+        alt="Slides"
+        class="rounded-lg"
+        draggable="false"
+        height="300px"
+        src="https://cdn.shopify.com/s/files/1/0688/1755/1382/products/slides.jpg?v=1675447358"
+        width="300px"
+      />
+      <div
+        class="flex h-min w-[350px] flex-col gap-5 rounded-lg border-[1px] border-slate-200 p-2.5"
+      >
+        <div>
+          <h1
+            class="text-xl"
+          >
+            Slides
+          </h1>
+          <p
+            class="font-poppins-reg text-lg"
+          >
+            $
+            25
+          </p>
+        </div>
+        <div
+          class="flex gap-1.5"
+        >
+          <button
+            aria-label="decrease quantity"
+            disabled=""
+          >
+            <svg
+              class="text-2xl"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 1024 1024"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm192 472c0 4.4-3.6 8-8 8H328c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h368c4.4 0 8 3.6 8 8v48z"
+              />
+            </svg>
+          </button>
+          <input
+            aria-label="item quantity"
+            class="h-[30px] w-full rounded-lg border-[1px] border-slate-200 text-center"
+            type="number"
+            value="1"
+          />
+          <button
+            aria-label="increase quantity"
+            class="text-2xl"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 1024 1024"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm192 472c0 4.4-3.6 8-8 8H544v152c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V544H328c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h152V328c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v152h152c4.4 0 8 3.6 8 8v48z"
+              />
+            </svg>
+          </button>
+        </div>
+        <button
+          class="w-full overflow-hidden truncate rounded-lg bg-primary-color p-2 text-center text-sm font-bold text-white"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+    <div
+      class="min-w-full max-w-min  border-t-[1px] border-slate-200"
+    >
+      <h3
+        class="my-1"
+      >
+        Description
+      </h3>
+      <p>
+        Simple, minimal and comfortable, these slides feature a classic design in the perfect shade of iron. Whether you're just lounging around the house or running errands, these slides will offer all-day comfort.
+      </p>
+    </div>
+  </div>
+</div>
+`;
