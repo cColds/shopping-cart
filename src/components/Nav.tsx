@@ -41,7 +41,7 @@ export default function Nav({
   };
 
   return (
-    <div className="flex items-center justify-between gap-3 px-4 py-2	shadow-md">
+    <nav className="flex items-center justify-between gap-3 px-4 py-2	shadow-md">
       <Link to="/" aria-label="home page" className="shrink-0">
         <img src={logo} alt="fashonique logo" className="h-[30px] w-[150px]" />
       </Link>
@@ -122,6 +122,6 @@ export default function Nav({
           </button>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }
