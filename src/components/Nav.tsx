@@ -27,14 +27,14 @@ export default function Nav({
   const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const updatedSearchValue = e.target.value.toLowerCase();
     setSearchValue(updatedSearchValue);
-    if (updatedSearchValue === "") {
+    if (updatedSearchValue.trim() === "") {
       setSearchResults([]);
       return;
     }
 
     const updatedSearchResults = items.filter((item) => {
       const { title } = item.node;
-      if (title.toLowerCase().includes(updatedSearchValue)) return item;
+      if (title.toLowerCase().includes(updatedSearchValue.trim())) return item;
     });
 
     setSearchResults(updatedSearchResults);
