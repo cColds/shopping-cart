@@ -33,7 +33,9 @@ function ItemPage({
   useEffect(() => {
     const targetItem =
       items.find(
-        ({ node: { title } }) => title.toLowerCase() === itemId?.toLowerCase()
+        ({ node: { title } }) =>
+          title.replace(/\s+/g, "-").toLowerCase() ===
+          itemId?.replace(/\s+/g, "-").toLowerCase()
       ) || null;
     setCurrentItem(targetItem);
   }, [items, itemId]);
