@@ -1,4 +1,4 @@
-import { useEffect, ChangeEvent } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AiFillMinusCircle, AiFillPlusCircle } from "react-icons/ai";
 import Item from "../interfaces/Item";
