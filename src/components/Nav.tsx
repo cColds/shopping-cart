@@ -41,13 +41,13 @@ export default function Nav({
   };
 
   return (
-    <div className="flex items-center justify-between gap-3 px-6 py-2	shadow-md">
+    <div className="flex items-center justify-between gap-3 px-4 py-2	shadow-md">
       <Link to="/" aria-label="home page" className="shrink-0">
-        <img src={logo} alt="fashonique logo" className="h-[30px] w-[180px]" />
+        <img src={logo} alt="fashonique logo" className="h-[30px] w-[150px]" />
       </Link>
       <button
         type="button"
-        className="flex h-[40px] w-full max-w-[350px] items-center gap-2 rounded-lg border-[1px] border-slate-200 focus:ring-sky-200"
+        className="flex h-[40px] w-[250px] items-center gap-2 rounded-lg border-[1px] border-slate-200 focus:ring-sky-200"
         onClick={handleSearchToggle}
       >
         <FaSearch className="m-2 mr-0 text-slate-500" aria-hidden="true" />
@@ -108,14 +108,10 @@ export default function Nav({
 
       <ul className="flex gap-5">
         <li className="flex items-center">
-          <Link to="/" className="text-lg">
-            Home
-          </Link>
+          <Link to="/">Home</Link>
         </li>
         <li className="flex items-center">
-          <Link to="/store" className="text-lg">
-            Store
-          </Link>
+          <Link to="/store">Store</Link>
         </li>
         <li className="flex">
           <button className="relative" onClick={onCartToggle}>
