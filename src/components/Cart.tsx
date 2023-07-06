@@ -88,7 +88,7 @@ function Cart({
         className="flex w-[450px] bg-white p-4"
       >
         <div className="flex w-full flex-col justify-between">
-          <div className="flex flex-col gap-3.5">
+          <div className="flex flex-col gap-3.5 overflow-auto">
             <h1 className="text-xl">
               {itemCount
                 ? `Cart (${itemCount} item${itemCount > 1 ? "s" : ""})`
