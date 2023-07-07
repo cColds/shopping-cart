@@ -28,11 +28,13 @@
 @font-face {
   font-family: Poppins;
   src: url("./assets/fonts/Poppins-Regular.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: Poppins-Bold;
   src: url("./assets/fonts/Poppins-Bold.ttf");
+  font-display: swap;
 }
 
 :root {
