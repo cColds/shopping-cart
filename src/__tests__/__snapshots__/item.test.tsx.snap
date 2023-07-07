@@ -3,10 +3,10 @@
 exports[`should render item page and match snapshot 1`] = `
 <div>
   <div
-    class="flex flex-col flex-wrap gap-5 p-12"
+    class="flex flex-col flex-wrap gap-5 p-8"
   >
     <div
-      class="flex gap-5"
+      class="flex flex-wrap justify-center gap-5"
     >
       <img
         alt="Slides"
@@ -17,7 +17,7 @@ exports[`should render item page and match snapshot 1`] = `
         width="300px"
       />
       <div
-        class="flex h-min w-[350px] flex-col gap-5 rounded-lg border-[1px] border-slate-200 p-2.5"
+        class="flex h-min flex-col gap-5 rounded-lg border-[1px] border-slate-200 p-2.5"
       >
         <div>
           <h1
@@ -87,7 +87,7 @@ exports[`should render item page and match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="min-w-full max-w-min  border-t-[1px] border-slate-200"
+      class="min-w-full max-w-min border-t-[1px] border-slate-200"
     >
       <h3
         class="my-1"

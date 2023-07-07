@@ -185,7 +185,7 @@ function Cart({
           {itemCount ? (
             <div className="flex flex-col gap-3.5">
               <p className="text-lg">
-                Total:{" "}
+                Total:
                 <span className="font-poppins-bold">${getTotalCost()}</span>
               </p>
               <button className="rounded-lg bg-primary-color p-2 text-center font-poppins-bold text-sm text-white">

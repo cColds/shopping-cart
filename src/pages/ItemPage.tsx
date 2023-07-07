@@ -46,8 +46,8 @@ function ItemPage({
   );
 
   return (
-    <div className="flex flex-col flex-wrap gap-5 p-12">
-      <div className="flex gap-5">
+    <div className="flex flex-col flex-wrap gap-5 p-8">
+      <div className="flex flex-wrap justify-center gap-5">
         <img
           src={currentItem.node.featuredImage.url}
           alt={currentItem.node.title}
@@ -57,7 +57,7 @@ function ItemPage({
           draggable="false"
         />
 
-        <div className="flex h-min w-[350px] flex-col gap-5 rounded-lg border-[1px] border-slate-200 p-2.5">
+        <div className="flex h-min flex-col gap-5 rounded-lg border-[1px] border-slate-200 p-2.5">
           <div>
             <h1 className="text-xl">{currentItem.node.title}</h1>
             <p className="font-poppins-reg text-lg">${price}</p>
@@ -104,7 +104,7 @@ function ItemPage({
           </button>
         </div>
       </div>
-      <div className="min-w-full max-w-min  border-t-[1px] border-slate-200">
+      <div className="min-w-full max-w-min border-t-[1px] border-slate-200">
         <h3 className="my-1">Description</h3>
         <p>{currentItem.node.description}</p>
       </div>
