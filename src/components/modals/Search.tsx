@@ -24,24 +24,23 @@ export default function Search({
         className="m-4 flex h-[450px] w-[450px] flex-col rounded-lg bg-white"
         onClick={(e) => e.stopPropagation()}
       >
-        <form
-          role="search"
-          className="flex h-[60px] w-full items-center border-b-[1px] border-slate-200 p-4"
-        >
-          <FaSearch className="mr-2 text-slate-500" aria-hidden="true" />
-          <input
-            type="search"
-            id="search"
-            placeholder="Search"
-            autoComplete="off"
-            className="h-full w-full focus:ring-0"
-            onChange={onSearchInputChange}
-            value={searchValue}
-          />
-          <button>
+        <div className="flex border-b-[1px] border-slate-200">
+          <form role="search" className="flex h-[60px] w-full items-center p-4">
+            <FaSearch className="mr-2 text-slate-500" aria-hidden="true" />
+            <input
+              type="search"
+              id="search"
+              placeholder="Search"
+              autoComplete="off"
+              className="h-full w-full focus:ring-0"
+              onChange={onSearchInputChange}
+              value={searchValue}
+            />
+          </form>
+          <button className="p-4" onClick={onSearchToggle}>
             <FaX className="h-4 w-4 text-slate-500" />
           </button>
-        </form>
+        </div>
 
         <ul className="flex flex-col gap-2 overflow-auto p-4">
           <h1 className="text-lg">
