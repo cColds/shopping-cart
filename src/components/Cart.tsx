@@ -85,10 +85,10 @@ function Cart({
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className="flex w-[450px] bg-white p-4"
+        className="flex w-full overflow-y-auto bg-white sm:w-[450px]"
       >
         <div className="flex w-full flex-col justify-between">
-          <div className="flex flex-col gap-3.5 overflow-auto">
+          <div className="flex flex-col gap-3.5 p-4">
             <div className="flex justify-between">
               <h1 className="text-xl">
                 {itemCount
@@ -107,7 +107,7 @@ function Cart({
 
                   return (
                     <li
-                      className="flex rounded-lg bg-card-gray shadow-lg"
+                      className="flex overflow-auto rounded-lg bg-card-gray shadow-lg"
                       key={item.node.id}
                     >
                       <div>
@@ -188,10 +188,10 @@ function Cart({
             )}
           </div>
           {itemCount ? (
-            <div className="flex flex-col gap-3.5">
+            <div className="flex flex-col gap-3.5 p-4">
               <p className="text-lg">
                 Total:
-                <span className="font-poppins-bold">${getTotalCost()}</span>
+                <span className="font-poppins-bold"> ${getTotalCost()}</span>
               </p>
               <button className="rounded-lg bg-primary-color p-2 text-center font-poppins-bold text-sm text-white">
                 Checkout
