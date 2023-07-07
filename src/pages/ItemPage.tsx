@@ -71,6 +71,7 @@ function ItemPage({
               }}
               aria-label="decrease quantity"
               disabled={quantity === 1}
+              className="transition duration-150 ease-in-out active:scale-95"
             >
               <FaCircleMinus className="text-2xl" />
             </button>
@@ -90,7 +91,7 @@ function ItemPage({
             <button
               onClick={onIncrementClick}
               aria-label="increase quantity"
-              className="text-2xl"
+              className="text-2xl transition duration-150 ease-in-out active:scale-95"
               disabled={quantity >= 1000}
             >
               <FaCirclePlus />
@@ -98,7 +99,7 @@ function ItemPage({
           </div>
           <button
             onClick={onAddToCartClick}
-            className="w-full overflow-hidden truncate rounded-lg bg-primary-color p-2 text-center text-sm font-bold text-white"
+            className="w-full overflow-hidden truncate rounded-lg bg-primary-color p-2 text-center text-sm font-bold text-white transition duration-150 ease-in-out active:scale-95"
           >
             Add to cart
           </button>

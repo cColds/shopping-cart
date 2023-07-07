@@ -10,7 +10,7 @@ export default function ItemCards({ items }: { items: Item[] }) {
         return (
           <li
             key={node.title}
-            className="flex cursor-pointer flex-col items-center"
+            className="flex cursor-pointer flex-col items-center transition duration-150 ease-in-out active:scale-95"
           >
             <Link
               to={`/store/${title.replace(/\s+/g, "-").toLowerCase()}`}

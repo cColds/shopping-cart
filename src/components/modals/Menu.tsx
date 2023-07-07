@@ -20,20 +20,31 @@ export default function Menu({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between">
-          <Link to="/" aria-label="home page" className="shrink-0">
+          <Link
+            to="/"
+            aria-label="home page"
+            className="shrink-0 transition duration-150 ease-in-out active:scale-95"
+          >
             <img
               src={logo}
               alt="fashonique logo"
               className="h-[30px] w-[150px]"
             />
           </Link>
-          <button onClick={onMenuToggle}>
+          <button
+            onClick={onMenuToggle}
+            className="transition duration-150 ease-in-out active:scale-95"
+          >
             <FaX className="h-5 w-5 text-slate-500" />
           </button>
         </div>
         <ul className="flex flex-col items-center gap-4 ">
           <li className="flex w-full">
-            <Link to="/" className="flex w-full gap-5" onClick={onMenuToggle}>
+            <Link
+              to="/"
+              className="flex w-full gap-5 transition duration-150 ease-in-out active:scale-95"
+              onClick={onMenuToggle}
+            >
               <FaHome className="h-6 w-6" />
               <span>Home</span>
             </Link>
@@ -41,7 +52,7 @@ export default function Menu({
           <li className="flex w-full">
             <Link
               to="/store"
-              className="flex w-full gap-5"
+              className="flex w-full gap-5 transition duration-150 ease-in-out active:scale-95"
               onClick={onMenuToggle}
             >
               <FaStore className="h-6 w-6" />
@@ -51,7 +62,7 @@ export default function Menu({
 
           <li className="flex w-full">
             <button
-              className="flex w-full gap-5"
+              className="flex w-full gap-5 transition duration-150 ease-in-out active:scale-95"
               onClick={() => {
                 onMenuToggle();
                 onCartToggle();

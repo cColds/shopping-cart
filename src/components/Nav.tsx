@@ -62,12 +62,16 @@ export default function Nav({
 
   return (
     <nav className="flex h-full flex-col items-center justify-between gap-3 px-4 py-2 shadow-md xs:h-[60px] xs:flex-row">
-      <Link to="/" aria-label="home page" className="shrink-0">
+      <Link
+        to="/"
+        aria-label="home page"
+        className="shrink-0 transition duration-150 ease-in-out active:scale-95"
+      >
         <img src={logo} alt="fashonique logo" className="h-[30px] w-[150px]" />
       </Link>
       <button
         type="button"
-        className="hidden h-[40px] w-[300px] items-center gap-2 rounded-lg border-[1px] border-slate-200 sm:flex"
+        className="hidden h-[40px] w-[300px] items-center gap-2 rounded-lg border-[1px] border-slate-200 transition duration-150 ease-in-out active:scale-95 sm:flex"
         onClick={handleSearchToggle}
       >
         <FaSearch className="m-2 mr-0 text-slate-500" aria-hidden="true" />
@@ -76,18 +80,25 @@ export default function Nav({
 
       <ul className="flex gap-5">
         <li className="flex items-center sm:hidden">
-          <button type="button" onClick={handleSearchToggle}>
+          <button
+            type="button"
+            onClick={handleSearchToggle}
+            className="transition duration-150 ease-in-out active:scale-95"
+          >
             <FaSearch className=" text-slate-500" aria-hidden="true" />
           </button>
         </li>
-        <li className="hidden sm:flex">
+        <li className="hidden transition duration-150 ease-in-out active:scale-95 sm:flex">
           <Link to="/">Home</Link>
         </li>
-        <li className="hidden sm:flex">
+        <li className="hidden transition duration-150 ease-in-out active:scale-95 sm:flex">
           <Link to="/store">Store</Link>
         </li>
         <li className="flex items-center">
-          <button className="relative" onClick={onCartToggle}>
+          <button
+            className="relative transition duration-150 ease-in-out active:scale-95"
+            onClick={onCartToggle}
+          >
             <FaShoppingCart className="h-5 w-5" />
             <span className="absolute right-[-10px] top-[-5px] flex h-[16px] min-w-[16px] items-center justify-center rounded-full bg-red-600 p-0.5 text-xs text-white">
               {itemCount < 100 ? itemCount : 99 + "+"}
@@ -96,7 +107,10 @@ export default function Nav({
         </li>
 
         <li className="flex items-center sm:hidden">
-          <button className="relative" onClick={handleMenuToggle}>
+          <button
+            className="relative transition duration-150 ease-in-out active:scale-95"
+            onClick={handleMenuToggle}
+          >
             <MdMenu className="h-6 w-6" />
           </button>
         </li>

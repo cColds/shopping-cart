@@ -95,7 +95,10 @@ function Cart({
                   ? `Cart (${itemCount} item${itemCount > 1 ? "s" : ""})`
                   : "Your cart is empty"}
               </h1>
-              <button onClick={onCartToggle}>
+              <button
+                onClick={onCartToggle}
+                className="transition duration-150 ease-in-out active:scale-95"
+              >
                 <FaX className="h-5 w-5 text-slate-500" />
               </button>
             </div>
@@ -137,7 +140,7 @@ function Cart({
                             Quantity:
                           </label>
                           <button
-                            className="text-xl"
+                            className="text-xl transition duration-150 ease-in-out active:scale-95"
                             aria-label="decrease quantity"
                             onClick={() => handleDecrementClick(item)}
                           >
@@ -157,7 +160,7 @@ function Cart({
                             }
                           />
                           <button
-                            className="text-xl"
+                            className="text-xl transition duration-150 ease-in-out active:scale-95"
                             aria-label="increase quantity"
                             onClick={() => handleIncrementClick(item)}
                           >
@@ -167,7 +170,7 @@ function Cart({
                       </div>
                       <div className="flex w-full items-start justify-end p-2.5">
                         <button
-                          className="text-xl"
+                          className="text-xl transition duration-150 ease-in-out active:scale-95"
                           aria-label="delete item"
                           onClick={() => onItemDeleteClick(item)}
                         >
@@ -181,7 +184,7 @@ function Cart({
             ) : (
               <button
                 onClick={onCartToggle}
-                className="rounded-lg bg-primary-color p-2 text-center font-poppins-bold text-sm text-white"
+                className="rounded-lg bg-primary-color p-2 text-center font-poppins-bold text-sm text-white transition duration-150 ease-in-out active:scale-95"
               >
                 Browse Products
               </button>
@@ -193,7 +196,7 @@ function Cart({
                 Total:
                 <span className="font-poppins-bold"> ${getTotalCost()}</span>
               </p>
-              <button className="rounded-lg bg-primary-color p-2 text-center font-poppins-bold text-sm text-white">
+              <button className="rounded-lg bg-primary-color p-2 text-center font-poppins-bold text-sm text-white transition duration-150 ease-in-out active:scale-95">
                 Checkout
               </button>
             </div>

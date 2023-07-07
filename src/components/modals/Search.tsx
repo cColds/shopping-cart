@@ -37,7 +37,10 @@ export default function Search({
               value={searchValue}
             />
           </form>
-          <button className="p-4" onClick={onSearchToggle}>
+          <button
+            className="p-4 transition duration-150 ease-in-out active:scale-95"
+            onClick={onSearchToggle}
+          >
             <FaX className="h-4 w-4 text-slate-500" />
           </button>
         </div>
@@ -54,7 +57,7 @@ export default function Search({
             return (
               <li key={item.node.id} className="flex">
                 <Link
-                  className="flex h-[50px] flex-grow items-center rounded-lg border-b-[1px]  border-slate-200 bg-slate-100 p-2.5 text-sm"
+                  className="flex h-[50px] flex-grow items-center rounded-lg border-b-[1px] border-slate-200 bg-slate-100 p-2.5 text-sm transition  duration-150 ease-in-out hover:bg-slate-200 active:scale-95"
                   to={`/store/${itemUrl}`}
                   onClick={onSearchToggle}
                 >

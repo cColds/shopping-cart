@@ -6,7 +6,11 @@ export default function Footer() {
   return (
     <footer className="mt-auto flex h-[70px] w-full items-center justify-between border-t-[1px] p-4">
       <div>
-        <Link to="/" aria-label="home page" className="shrink-0">
+        <Link
+          to="/"
+          aria-label="home page"
+          className="shrink-0 transition duration-150 ease-in-out active:scale-95"
+        >
           <img
             src={logo}
             alt="fashonique logo"
@@ -21,7 +25,7 @@ export default function Footer() {
         <a
           href="https://github.com/ccolds"
           target="_blank"
-          className="flex items-center gap-3"
+          className="flex items-center gap-3 transition duration-150 ease-in-out active:scale-95"
         >
           <span className="font-bold">cColds</span>
 

@@ -13,7 +13,7 @@ export default function Hero() {
       </p>
       <Link
         to="/store"
-        className="w-[150px] overflow-hidden truncate rounded-lg bg-primary-color p-3 text-center font-bold text-white"
+        className="w-[150px] overflow-hidden truncate rounded-lg bg-primary-color  p-3 text-center font-bold text-white transition duration-150 ease-in-out active:scale-95"
       >
         Shop now
       </Link>
