@@ -3,7 +3,7 @@
 exports[`should render nav and match snapshot 1`] = `
 <div>
   <nav
-    class="flex items-center justify-between gap-3 px-4 py-2	shadow-md"
+    class="flex h-full flex-col items-center justify-between gap-3 px-4 py-2 shadow-md xs:h-[60px] xs:flex-row"
   >
     <a
       aria-label="home page"
@@ -17,7 +17,7 @@ exports[`should render nav and match snapshot 1`] = `
       />
     </a>
     <button
-      class="flex h-[40px] w-[250px] items-center gap-2 rounded-lg border-[1px] border-slate-200 focus:ring-sky-200"
+      class="hidden h-[40px] w-[300px] items-center gap-2 rounded-lg border-[1px] border-slate-200 sm:flex"
       type="button"
     >
       <svg
@@ -41,6 +41,105 @@ exports[`should render nav and match snapshot 1`] = `
         Search
       </span>
     </button>
+    <ul
+      class="flex gap-5"
+    >
+      <li
+        class="flex items-center sm:hidden"
+      >
+        <button
+          class="h-[40px] items-center justify-center rounded-lg"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            class="m-2 mr-0 text-slate-500"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+            />
+          </svg>
+        </button>
+      </li>
+      <li
+        class="hidden items-center sm:flex"
+      >
+        <a
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="hidden items-center sm:flex"
+      >
+        <a
+          href="/store"
+        >
+          Store
+        </a>
+      </li>
+      <li
+        class="flex items-center"
+      >
+        <button
+          class="relative"
+        >
+          <svg
+            class="h-5 w-5"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 576 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"
+            />
+          </svg>
+          <span
+            class="absolute right-[-10px] top-[-5px] flex h-[16px] min-w-[16px] items-center justify-center rounded-full bg-red-600 p-0.5 text-xs text-white"
+          >
+            0
+          </span>
+        </button>
+      </li>
+      <li
+        class="flex items-center sm:hidden"
+      >
+        <button
+          class="relative"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
     <div
       class="fixed right-0 top-0 z-50 flex h-full w-full items-center justify-center bg-modal backdrop-blur-sm data-[search-modal='false']:invisible"
       data-search-modal="false"
@@ -87,55 +186,6 @@ exports[`should render nav and match snapshot 1`] = `
         </ul>
       </div>
     </div>
-    <ul
-      class="flex gap-5"
-    >
-      <li
-        class="flex items-center"
-      >
-        <a
-          href="/"
-        >
-          Home
-        </a>
-      </li>
-      <li
-        class="flex items-center"
-      >
-        <a
-          href="/store"
-        >
-          Store
-        </a>
-      </li>
-      <li
-        class="flex"
-      >
-        <button
-          class="relative"
-        >
-          <svg
-            class="text-xl"
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 576 512"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"
-            />
-          </svg>
-          <span
-            class="absolute right-[-10px] top-[-5px] flex h-[16px] min-w-[16px] items-center justify-center rounded-full bg-red-600 p-0.5 text-xs text-white"
-          >
-            0
-          </span>
-        </button>
-      </li>
-    </ul>
   </nav>
 </div>
 `;
