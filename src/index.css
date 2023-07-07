@@ -18,9 +18,10 @@
     @apply text-body-color;
   }
 
-  input:focus {
-    @apply ring-2;
-    border-radius: 5px;
+  input:focus,
+  button:focus,
+  a:focus {
+    @apply rounded-lg ring-2 ring-offset-2;
   }
 }
 
@@ -53,7 +54,9 @@ h3 {
   font-family: Poppins-Bold;
 }
 
-input {
+input,
+button,
+a {
   outline: 0;
 }
 
