@@ -1,4 +1,4 @@
-import { FaCirclePlus, FaCircleMinus, FaTrash } from "react-icons/fa6";
+import { FaCirclePlus, FaCircleMinus, FaTrash, FaX } from "react-icons/fa6";
 
 import Item from "../interfaces/Item";
 
@@ -89,11 +89,16 @@ function Cart({
       >
         <div className="flex w-full flex-col justify-between">
           <div className="flex flex-col gap-3.5 overflow-auto">
-            <h1 className="text-xl">
-              {itemCount
-                ? `Cart (${itemCount} item${itemCount > 1 ? "s" : ""})`
-                : "Your cart is empty"}
-            </h1>
+            <div className="flex justify-between">
+              <h1 className="text-xl">
+                {itemCount
+                  ? `Cart (${itemCount} item${itemCount > 1 ? "s" : ""})`
+                  : "Your cart is empty"}
+              </h1>
+              <button onClick={onCartToggle}>
+                <FaX className="h-5 w-5 text-slate-500" />
+              </button>
+            </div>
 
             {itemCount ? (
               <ul className="flex flex-col gap-3">

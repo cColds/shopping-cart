@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import Item from "../../interfaces/Item";
 import { ChangeEvent } from "react";
+import { FaX } from "react-icons/fa6";
 
 export default function Search({
   onSearchToggle,
@@ -25,9 +26,9 @@ export default function Search({
       >
         <form
           role="search"
-          className="flex h-[60px] w-full items-center border-b-[1px] border-slate-200 p-1"
+          className="flex h-[60px] w-full items-center border-b-[1px] border-slate-200 p-4"
         >
-          <FaSearch className="m-2 text-slate-500" aria-hidden="true" />
+          <FaSearch className="mr-2 text-slate-500" aria-hidden="true" />
           <input
             type="search"
             id="search"
@@ -37,6 +38,9 @@ export default function Search({
             onChange={onSearchInputChange}
             value={searchValue}
           />
+          <button>
+            <FaX className="h-4 w-4 text-slate-500" />
+          </button>
         </form>
 
         <ul className="flex flex-col gap-2 overflow-auto p-2.5">
