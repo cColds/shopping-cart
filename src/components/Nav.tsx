@@ -76,18 +76,14 @@ export default function Nav({
 
       <ul className="flex gap-5">
         <li className="flex items-center sm:hidden">
-          <button
-            type="button"
-            className="h-[40px] items-center justify-center rounded-lg"
-            onClick={handleSearchToggle}
-          >
-            <FaSearch className="m-2 mr-0 text-slate-500" aria-hidden="true" />
+          <button type="button" onClick={handleSearchToggle}>
+            <FaSearch className=" text-slate-500" aria-hidden="true" />
           </button>
         </li>
-        <li className="hidden items-center sm:flex">
+        <li className="hidden sm:flex">
           <Link to="/">Home</Link>
         </li>
-        <li className="hidden items-center sm:flex">
+        <li className="hidden sm:flex">
           <Link to="/store">Store</Link>
         </li>
         <li className="flex items-center">
