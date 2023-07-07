@@ -21,15 +21,27 @@ export default function Nav({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
+    const invertIsMenuOpen = !isMenuOpen;
+    if (invertIsMenuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    setIsMenuOpen(invertIsMenuOpen);
   };
 
   const handleSearchToggle = () => {
-    if (!isSearchOpen) {
+    const invertIsSearchOpen = !isSearchOpen;
+    if (invertIsSearchOpen) {
       setSearchResults([]);
       setSearchValue("");
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
     }
-    setIsSearchOpen(!isSearchOpen);
+
+    setIsSearchOpen(invertIsSearchOpen);
   };
   const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const updatedSearchValue = e.target.value.toLowerCase();

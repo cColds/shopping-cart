@@ -36,7 +36,12 @@ function App() {
   };
 
   const handleCartToggle = () => {
-    setIsCartOpen(!isCartOpen);
+    const invertIsCartOpen = !isCartOpen;
+    if (invertIsCartOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else document.body.classList.remove("overflow-hidden");
+
+    setIsCartOpen(invertIsCartOpen);
   };
 
   const handleAddToCartClick = () => {
