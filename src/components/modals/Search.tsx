@@ -43,7 +43,7 @@ export default function Search({
           </button>
         </form>
 
-        <ul className="flex flex-col gap-2 overflow-auto p-2.5">
+        <ul className="flex flex-col gap-2 overflow-auto p-4">
           <h1 className="text-lg">
             {searchResults.length
               ? `Items (${searchResults.length})`
