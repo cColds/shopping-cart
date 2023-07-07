@@ -84,6 +84,7 @@ export default function Nav({
             type="button"
             onClick={handleSearchToggle}
             className="transition duration-150 ease-in-out active:scale-95"
+            aria-label="search"
           >
             <FaSearch className=" text-slate-500" aria-hidden="true" />
           </button>
@@ -98,6 +99,7 @@ export default function Nav({
           <button
             className="relative transition duration-150 ease-in-out active:scale-95"
             onClick={onCartToggle}
+            aria-label="cart"
           >
             <FaShoppingCart className="h-5 w-5" />
             <span className="absolute right-[-10px] top-[-5px] flex h-[16px] min-w-[16px] items-center justify-center rounded-full bg-red-600 p-0.5 text-xs text-white">
@@ -110,6 +112,7 @@ export default function Nav({
           <button
             className="relative transition duration-150 ease-in-out active:scale-95"
             onClick={handleMenuToggle}
+            aria-label="menu"
           >
             <MdMenu className="h-6 w-6" />
           </button>
