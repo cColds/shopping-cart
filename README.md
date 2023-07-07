@@ -18,8 +18,8 @@
 - [Mock Shop (API)](https://mock.shop/)
 - [React Testing Library](https://testing-library.com/)
 - [Jest](https://jestjs.io/)
-- [Cloudinary](https://cloudinary.com/)
+- [Cloudinary (Image Compressor)](https://cloudinary.com/)
 
 ## Thoughts
 
-I used quite a few new tools this project, including Tailwind, Vite, React Router, TailwindCSS, and React Testing Library. Quite an enlightening project!
+I used quite a few new tools this project, including TypeScript, Vite, React Router, TailwindCSS, and React Testing Library. Quite an enlightening project!
