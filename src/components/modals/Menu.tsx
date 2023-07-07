@@ -28,7 +28,7 @@ export default function Menu({
             />
           </Link>
           <button onClick={onMenuToggle}>
-            <FaX />
+            <FaX className="h-5 w-5" />
           </button>
         </div>
         <ul className="flex flex-col items-center gap-4 ">
