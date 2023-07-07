@@ -111,7 +111,7 @@ export default function Nav({
         onClick={handleSearchToggle}
       >
         <div
-          className="flex h-[450px] w-[450px] flex-col rounded-lg bg-white"
+          className="m-4 flex h-[450px] w-[450px] flex-col rounded-lg bg-white"
           onClick={(e) => e.stopPropagation()}
         >
           <form
