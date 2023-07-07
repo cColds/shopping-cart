@@ -18,9 +18,9 @@
     @apply text-body-color;
   }
 
-  input:focus,
-  button:focus,
-  a:focus {
+  input:focus-visible,
+  button:focus-visible,
+  a:focus-visible {
     @apply rounded-lg ring-2 ring-offset-2;
   }
 }
