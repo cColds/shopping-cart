@@ -9,7 +9,7 @@ exports[`should render store and match snapshot 1`] = `
       class="m-8 flex w-full flex-wrap justify-center gap-12 p-8"
     >
       <li
-        class="flex cursor-pointer flex-col items-center"
+        class="flex cursor-pointer flex-col items-center transition duration-150 ease-in-out active:scale-95"
       >
         <a
           aria-label="Slides for $25"
@@ -42,7 +42,7 @@ exports[`should render store and match snapshot 1`] = `
         </a>
       </li>
       <li
-        class="flex cursor-pointer flex-col items-center"
+        class="flex cursor-pointer flex-col items-center transition duration-150 ease-in-out active:scale-95"
       >
         <a
           aria-label="Sweatpants for $35"

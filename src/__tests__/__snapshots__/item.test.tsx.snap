@@ -37,6 +37,7 @@ exports[`should render item page and match snapshot 1`] = `
         >
           <button
             aria-label="decrease quantity"
+            class="transition duration-150 ease-in-out active:scale-95"
             disabled=""
           >
             <svg
@@ -62,7 +63,7 @@ exports[`should render item page and match snapshot 1`] = `
           />
           <button
             aria-label="increase quantity"
-            class="text-2xl"
+            class="text-2xl transition duration-150 ease-in-out active:scale-95"
           >
             <svg
               fill="currentColor"
@@ -80,7 +81,7 @@ exports[`should render item page and match snapshot 1`] = `
           </button>
         </div>
         <button
-          class="w-full overflow-hidden truncate rounded-lg bg-primary-color p-2 text-center text-sm font-bold text-white"
+          class="w-full overflow-hidden truncate rounded-lg bg-primary-color p-2 text-center text-sm font-bold text-white transition duration-150 ease-in-out active:scale-95"
         >
           Add to cart
         </button>

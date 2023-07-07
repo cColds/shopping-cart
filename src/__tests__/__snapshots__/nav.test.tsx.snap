@@ -7,7 +7,7 @@ exports[`should render nav and match snapshot 1`] = `
   >
     <a
       aria-label="home page"
-      class="shrink-0"
+      class="shrink-0 transition duration-150 ease-in-out active:scale-95"
       href="/"
     >
       <img
@@ -17,7 +17,7 @@ exports[`should render nav and match snapshot 1`] = `
       />
     </a>
     <button
-      class="hidden h-[40px] w-[300px] items-center gap-2 rounded-lg border-[1px] border-slate-200 sm:flex"
+      class="hidden h-[40px] w-[300px] items-center gap-2 rounded-lg border-[1px] border-slate-200 transition duration-150 ease-in-out active:scale-95 sm:flex"
       type="button"
     >
       <svg
@@ -48,12 +48,12 @@ exports[`should render nav and match snapshot 1`] = `
         class="flex items-center sm:hidden"
       >
         <button
-          class="h-[40px] items-center justify-center rounded-lg"
+          class="transition duration-150 ease-in-out active:scale-95"
           type="button"
         >
           <svg
             aria-hidden="true"
-            class="m-2 mr-0 text-slate-500"
+            class=" text-slate-500"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -69,7 +69,7 @@ exports[`should render nav and match snapshot 1`] = `
         </button>
       </li>
       <li
-        class="hidden items-center sm:flex"
+        class="hidden transition duration-150 ease-in-out active:scale-95 sm:flex"
       >
         <a
           href="/"
@@ -78,7 +78,7 @@ exports[`should render nav and match snapshot 1`] = `
         </a>
       </li>
       <li
-        class="hidden items-center sm:flex"
+        class="hidden transition duration-150 ease-in-out active:scale-95 sm:flex"
       >
         <a
           href="/store"
@@ -90,7 +90,7 @@ exports[`should render nav and match snapshot 1`] = `
         class="flex items-center"
       >
         <button
-          class="relative"
+          class="relative transition duration-150 ease-in-out active:scale-95"
         >
           <svg
             class="h-5 w-5"
@@ -117,7 +117,7 @@ exports[`should render nav and match snapshot 1`] = `
         class="flex items-center sm:hidden"
       >
         <button
-          class="relative"
+          class="relative transition duration-150 ease-in-out active:scale-95"
         >
           <svg
             class="h-6 w-6"
