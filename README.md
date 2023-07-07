@@ -22,4 +22,4 @@
 
 ## Thoughts
 
-### I Used quite a few new tools this project, including Tailwind, Vite, React Router, TailwindCSS, and React Testing Library. Quite an enlightening project!
+I used quite a few new tools this project, including Tailwind, Vite, React Router, TailwindCSS, and React Testing Library. Quite an enlightening project!
