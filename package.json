@@ -1,4 +1,5 @@
 {
+  "homepage": "https://cColds.github.io/shopping-cart",
   "name": "shopping-cart",
   "private": true,
   "version": "0.0.0",
@@ -8,9 +9,12 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
