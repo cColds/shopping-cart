@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
 import Item from "../interfaces/Item";
+import ItemImage from "../components/ItemImage";
 
 function ItemPage({
   items,
@@ -48,13 +49,12 @@ function ItemPage({
   return (
     <div className="flex flex-col flex-wrap gap-5 p-8">
       <div className="flex flex-wrap justify-center gap-5">
-        <img
+        <ItemImage
           src={currentItem.node.featuredImage.url}
           alt={currentItem.node.title}
           width="300px"
           height="300px"
           className="rounded-lg"
-          draggable="false"
         />
 
         <div className="flex h-min flex-col gap-5 rounded-lg border-[1px] border-slate-200 p-2.5">

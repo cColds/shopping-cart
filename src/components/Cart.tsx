@@ -1,6 +1,7 @@
 import { FaCirclePlus, FaCircleMinus, FaTrash, FaX } from "react-icons/fa6";
 
 import Item from "../interfaces/Item";
+import ItemImage from "./ItemImage";
 
 function Cart({
   isCartOpen,
@@ -114,11 +115,10 @@ function Cart({
                       key={item.node.id}
                     >
                       <div>
-                        <img
+                        <ItemImage
                           className="min-w-[100px] max-w-[100px] rounded-l-lg"
                           src={item.node.featuredImage.url}
                           alt={item.node.title}
-                          draggable="false"
                         />
                       </div>
                       <div className="flex flex-col justify-between p-2.5">

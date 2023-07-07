@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Item from "../interfaces/Item";
+import ItemImage from "./ItemImage";
 
 export default function ItemCards({ items }: { items: Item[] }) {
   return (
@@ -17,13 +18,12 @@ export default function ItemCards({ items }: { items: Item[] }) {
               className="w-[200px]"
               aria-label={`${title} for $${price}`}
             >
-              <img
-                src={featuredImage.url}
+              <ItemImage
                 alt={title}
-                width="200px"
-                height="200px"
-                className="rounded-tl-lg rounded-tr-lg"
-                draggable="false"
+                src={featuredImage.url}
+                width="200"
+                height="200"
+                className="rounded-t-lg"
               />
               <div className="flex h-24 flex-col gap-1 rounded-bl-lg rounded-br-lg bg-white p-2.5 shadow-lg">
                 <h3 className="truncate">{title}</h3>
